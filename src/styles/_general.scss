@@ -1,0 +1,29 @@
+body {
+  // Antialiased experimental shit
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  font-smooth: always;
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.is-none { display: none !important; }
+.is-block { display: block !important; }
+.is-hidden { opacity: 0; visibility: hidden; }
+.is-not-visible { visibility: hidden; }
+
+.is-light    { font-weight: 300 !important; }
+.is-regular  { font-weight: 600 !important; }
+.is-semibold { font-weight: 600 !important; }
+.is-bold     { font-weight: 800 !important; }
+
+.is-capitalize { text-transform: capitalize !important; }
+.is-lowercase  { text-transform: lowercase !important; }
+.is-uppercase  { text-transform: uppercase !important; }
+
+@each $name, $hex in $colours {
+  .is-#{$name} { color: $hex; }
+  .is-#{$name}-background { background-color: $hex; }
+}

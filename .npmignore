@@ -1,0 +1,5 @@
+tasks/
+build/
+.editorconfig
+.babelrc
+gulpfile.babel.js
