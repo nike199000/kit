@@ -1,0 +1,47 @@
+$text-color: get-colour('ui-1');
+$base-text-size: 16px;
+$base-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+.is-light    { font-weight: 300 !important; }
+.is-regular  { font-weight: 600 !important; }
+.is-semibold { font-weight: 600 !important; }
+.is-bold     { font-weight: 800 !important; }
+
+.is-capitalize { text-transform: capitalize !important; }
+.is-lowercase  { text-transform: lowercase !important; }
+.is-uppercase  { text-transform: uppercase !important; }
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 600;
+}
+
+h1, .h1 { font-size: 40px; }
+h2, .h2 { font-size: 32px; }
+h3, .h3 { font-size: 28px; font-style: italic; }
+h4, .h4 { font-size: 24px; }
+h5, .h5 { font-size: 20px; }
+h6, .h6 { font-size: 16px; font-style: italic; }
+
+.is-display {
+  font-style: normal;
+
+  @at-root h1#{&}, &.h1 { font-size: 96px; }
+  @at-root h2#{&}, &.h2 { font-size: 88px; }
+  @at-root h3#{&}, &.h3 { font-size: 72px; }
+  @at-root h4#{&}, &.h4 { font-size: 56px; }
+}
+
+.paragraph {
+  font-size: 18px;
+  line-break: 30px;
+}
+
+.caption {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.is-small-text {
+  font-size: 12px;
+  line-height: 22px;
+}

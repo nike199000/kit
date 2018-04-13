@@ -1,0 +1,44 @@
+{%
+  set menu = [
+    {
+      'name': 'colours',
+      'children': ['core', 'support']
+    },
+    {
+      'name': 'typography',
+      'children': ['headings', 'text']
+    },
+    {
+      'name': 'forms',
+      'children': ['buttons', 'inputs', 'selectors']
+    }
+  ]
+%}
+
+<aside class="aside is-blue-background-colour">
+
+  <h4 class="title h4 is-white-colour">
+    Kit 1.0
+  </h4>
+
+  <p class="slogen is-white-colour">
+    An easy-peasy <br />
+    design system.
+  </p>
+
+  <dl class="menu">
+    {% for item in menu %}
+      <dt class="header is-uppercase is-white-colour is-semibold">{{ item.name }}</dt>
+
+      {% if item.children %}
+        {% for subItem in item.children %}
+          <dd class="item is-capitalize">
+            <a href="#{{ subItem }}" class="is-block is-white-colour">{{ subItem }}</a>
+          </dd>
+        {% endfor %}
+      {% endif %}
+
+    {% endfor %}
+  </dl>
+
+</aside>
