@@ -11,11 +11,11 @@ const AUTOPREFIXER_CONFIG = {
 };
 
 const fileRename = ( path ) => {
-  path.basename = 'kit';
+  path.basename = 'page';
 };
 
 const styles = ({ gulp, plugins, done }) => {
-  gulp.src('src/styles/index.scss')
+  gulp.src('page/styles/index.scss')
     .pipe( plugins.sass( SASS_CONFIG ).on( 'error', plugins.sass.logError ) )
     .pipe( plugins.autoprefixer( AUTOPREFIXER_CONFIG ))
     .pipe( plugins.rename( fileRename ) )

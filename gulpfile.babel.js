@@ -16,10 +16,12 @@ gulp.task( 'default', done => done() );
 gulp.task( 'styles', getTask( 'styles' ) );
 
 gulp.task( 'clean', del.bind( null, ['build'] ) );
-gulp.task( 'watch', getTask('watch') );
 gulp.task( 'build', gulp.series( 'clean', 'styles' ) );
+gulp.task( 'watch', getTask('watch') );
 
-gulp.task( 'page', getTask( 'page' ) );
+gulp.task( 'page-styles', getTask( 'page/styles' ) );
+gulp.task( 'page-views', getTask( 'page/views' ) );
+gulp.task( 'page', gulp.series( 'page-views', 'page-styles' ) );
 
 gulp.task( 'dev-server', gulp.series(
   'build', 'page', 'watch', getTask( 'dev-server' )
