@@ -1,6 +1,12 @@
 $text-color: get-colour('ui-1');
 $base-text-size: 16px;
-$base-font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+$base-font-family: (
+  -apple-system,
+  BlinkMacSystemFont,
+  "Helvetica Neue",
+  Arial,
+  sans-serif
+);
 
 .is-light    { font-weight: 300 !important; }
 .is-regular  { font-weight: 600 !important; }

@@ -11,7 +11,7 @@ const AUTOPREFIXER_CONFIG = {
 };
 
 const fileRename = ( path ) => {
-  path.basename = 'page';
+  path.basename = 'style';
 };
 
 const styles = ({ gulp, plugins, done }) => {

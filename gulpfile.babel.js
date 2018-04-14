@@ -24,5 +24,5 @@ gulp.task( 'page-views', getTask( 'page/views' ) );
 gulp.task( 'page', gulp.series( 'page-views', 'page-styles' ) );
 
 gulp.task( 'dev-server', gulp.series(
-  'build', 'page', 'watch', getTask( 'dev-server' )
+  'clean', 'page', 'watch', getTask( 'dev-server' )
 ));

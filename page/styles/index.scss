@@ -1,45 +1,23 @@
+@import "src/styles/index";
+
 html, body, .page { height: 100%; }
 
 .page {
   display: flex;
 }
 
-.aside {
-  flex-shrink: 0;
-  padding: 50px;
-  width: 190px;
+@import "aside";
 
+.main {
+  flex-grow: 1;
+  padding: 120px 0 0 120px;
 
-  .title {
-    margin-bottom: 10px;
+  .section {
+    border-bottom: 1px solid get-colour('ui-4');
+    margin-bottom: 120px;
+    padding-bottom: 120px;
   }
 
-  .slogen {
-    font-size: 12px;
-    margin-bottom: 50px;
-    opacity: 0.5;
-  }
-
-  .menu {
-    font-size: 12px;
-
-    .header {
-      line-height: 30px;
-      margin-top: 30px;
-
-      &:first-child { margin-top: 0; }
-    }
-
-    .item {
-      line-height: 22px;
-
-      a {
-        opacity: 0.5;
-        text-decoration: none;
-
-        &:hover { opacity: 1; }
-      }
-
-    }
-  }
+  .header, .title { margin-bottom: 60px; }
+  .sub-title { margin-bottom: 30px; }
 }

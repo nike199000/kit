@@ -1,0 +1,38 @@
+.aside {
+  flex-shrink: 0;
+  padding: 50px;
+  width: 190px;
+
+
+  .title {
+    margin-bottom: 10px;
+  }
+
+  .slogen {
+    font-size: 12px;
+    margin-bottom: 50px;
+    opacity: 0.5;
+  }
+
+  .menu {
+    font-size: 12px;
+
+    .header {
+      line-height: 30px;
+      margin-top: 30px;
+
+      &:first-child { margin-top: 0; }
+    }
+
+    .item {
+      line-height: 22px;
+
+      a {
+        opacity: 0.5;
+        text-decoration: none;
+
+        &:hover { opacity: 1; }
+      }
+    }
+  }
+}
