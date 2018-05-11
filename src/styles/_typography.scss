@@ -1,4 +1,4 @@
-$text-color: get-colour('core-3');
+$text-color: get-color('core-3');
 $base-text-size: 16px;
 $base-font-family: ( 'IBM Plex Sans', sans-serif );
 
@@ -12,6 +12,9 @@ $base-font-family: ( 'IBM Plex Sans', sans-serif );
 .is-capitalize { text-transform: capitalize !important; }
 .is-lowercase  { text-transform: lowercase !important; }
 .is-uppercase  { text-transform: uppercase !important; }
+
+// TODO: list style type
+// list-style-type: none;
 
 
 .h1, .h2, .h3, .h4, .h5, .h6 {

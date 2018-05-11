@@ -51,7 +51,7 @@ $colors: (
 );
 
 
-@function get-colour( $name ) {
+@function get-color( $name ) {
   @if map-has-key( $colors, $name ) {
     @return map-get( $colors, $name );
   } @else {

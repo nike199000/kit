@@ -1,44 +1,52 @@
 {%
   set menu = [
     {
-      'name': 'colours',
-      'children': ['core', 'support']
+      'name': 'color',
+      'children': ['core', 'support', 'UI']
     },
     {
       'name': 'typography',
-      'children': ['headings', 'text']
+      'children': ['typeface', 'headings', 'body']
     },
     {
-      'name': 'forms',
-      'children': ['buttons', 'inputs', 'selectors']
+      'name': 'UI',
+      'children': ['buttons', 'inputs', 'components']
+    },
+    {
+      'name': 'assets',
+      'children': []
     }
   ]
 %}
 
 <aside class="aside is-blue-background-colour">
 
-  <h4 class="title h4 is-white">
+  <h4 class="h4 is-bold">
     Kit %%GULP_INJECT_VERSION%%
   </h4>
 
-  <p class="slogen is-white-colour">
-    An easy-peasy <br />
-    design system.
+  <p class="slogen small-text ui-2-color">
+    An easy peasy design framework.
   </p>
 
-  <dl class="menu">
-    {% for item in menu %}
-      <dt class="header is-uppercase is-white-colour is-semibold">{{ item.name }}</dt>
+  <ol class="menu">
+    {% for category in menu %}
+      <li class="category">
+        <h5 class="h5 is-capitalize">
+          {{ loop.index + '. ' + category.name }}
+        </h5>
 
-      {% if item.children %}
-        {% for subItem in item.children %}
-          <dd class="item is-capitalize">
-            <a href="#{{ subItem }}" class="is-block is-white-colour">{{ subItem }}</a>
-          </dd>
-        {% endfor %}
-      {% endif %}
-
+        {% if category.children %}
+          <ul class="sub-categories">
+            {% for subCategory in category.children %}
+              <li class="sub-category is-capitalize">
+                <a href="#{{ subCategory | lower }}" class="ui-2-color">{{ subCategory }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
     {% endfor %}
-  </dl>
+  </ol>
 
 </aside>
