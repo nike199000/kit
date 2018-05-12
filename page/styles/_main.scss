@@ -1,12 +1,52 @@
 .main {
   flex-grow: 1;
-  padding: 180px 0 0 80px;
+  padding: 180px 0 0 0px;
 
   .section { padding-bottom: 180px; }
 
   .header, .title { margin-bottom: 30px; }
 
   .colors {
+    .swatches {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
 
+      .swatch {
+        margin-bottom: 30px;
+        width: 286px;
+      }
+    }
+
+    .background {
+      border-radius: $border-radius;
+      display: flex;
+      flex-direction: row;
+      height: 60px;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+      min-width: 48px * 4;
+      width: 100%;
+
+      [class^="shade-"] {
+        background-color: #000;
+        height: inherit;
+        width: 48px;
+
+        &:last-child { border-radius: 0 $border-radius $border-radius 0; }
+      }
+
+      .shade-10 { opacity: 0.1; }
+      .shade-30 { opacity: 0.3; }
+      .shade-50 { opacity: 0.5; }
+    }
+
+    .detail {
+      display: flex;
+      justify-content: space-between;
+
+      &:first-child { margin-bottom: 5px; }
+    }
   }
 }
