@@ -4,35 +4,15 @@
 
   .section { padding-bottom: 180px; }
 
-  .header, .title { margin-bottom: 30px; }
-
   .colors {
-    .swatches {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 100%;
-
-      .swatch {
-        margin-bottom: 30px;
-        width: 286px;
-      }
-    }
-
     .background {
       border-radius: $border-radius;
-      display: flex;
-      flex-direction: row;
       height: 60px;
-      justify-content: flex-end;
       margin-bottom: 10px;
-      min-width: 48px * 4;
-      width: 100%;
 
       [class^="shade-"] {
         background-color: #000;
-        height: inherit;
-        width: 48px;
+        // height: inherit;
 
         &:last-child { border-radius: 0 $border-radius $border-radius 0; }
       }
@@ -40,13 +20,33 @@
       .shade-10 { opacity: 0.1; }
       .shade-30 { opacity: 0.3; }
       .shade-50 { opacity: 0.5; }
+
+      &.ui-6-background-color {
+        border: 2px solid rgba( #000, 0.1 );
+      }
     }
 
     .detail {
-      display: flex;
-      justify-content: space-between;
-
+      .swatch-name { line-height: 25px; }
       &:first-child { margin-bottom: 5px; }
+    }
+  }
+
+  .layout {
+    .row {
+      border: 2px dashed get-color('may-green');
+    }
+
+    .column {
+      border: 2px dashed get-color('usc-gold');
+    }
+
+    .component {
+      background-color: get-color('pacific-blue');
+      border-radius: $border-radius;
+      color: get-color('white');
+      text-align: center;
+      padding: 5px 0;
     }
   }
 }

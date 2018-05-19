@@ -1,0 +1,66 @@
+$column-spacing: 30px;
+$column-gutter: ( $column-spacing / 2 );
+
+$row-spacing: 30px;
+$row-gutter: ( $row-spacing / 2 );
+
+$column-count: 12;
+$word-columns: (
+  one two three four five six seven eight nine ten eleven twelve
+);
+
+
+.container {
+  padding: 0 $column-gutter;
+}
+
+.grid {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .row {
+    align-items: stretch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-bottom: $row-gutter;
+    padding-top: $row-gutter;
+    position: relative;
+    width: 100% !important;
+
+
+    &:first-child { padding-top: 0; }
+    &:last-child  { padding-bottom: 0; }
+    .column:first-child { padding-left: 0; }
+    .column:last-child  { padding-right: 0; }
+  }
+
+  .column {
+    display: inline-block;
+    padding-left: $column-gutter;
+    padding-right: $column-gutter;
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+  }
+
+  @each $word-column in $word-columns {
+    $index: index( $word-columns, $word-column );
+
+    .#{$word-column}.column {
+      width: ( $index / $column-count * 100% ) !important
+    }
+  }
+
+  .with-no-row-gutter    { padding-top: 0; padding-bottom: 0; }
+  .with-no-column-gutter { padding-left: 0; padding-right: 0; }
+  .with-no-gutter        { padding: 0; }
+
+  .is-aligned-right   { justify-content: flex-end; }
+  .is-aligned-center  { justify-content: center; }
+  .with-space-between { justify-content: space-between; }
+  .with-space-around  { justify-content: space-around; }
+}
