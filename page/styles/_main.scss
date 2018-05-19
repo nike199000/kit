@@ -1,8 +1,7 @@
 .main {
-  flex-grow: 1;
-  padding: 180px 0 0 0px;
+  padding-top: 120px;
 
-  .section { padding-bottom: 180px; }
+  .section { padding-bottom: 120px; }
 
   .colors {
     .background {
@@ -32,7 +31,7 @@
     }
   }
 
-  .layout {
+  .layout .grid {
     .row {
       border: 2px dashed get-color('may-green');
     }

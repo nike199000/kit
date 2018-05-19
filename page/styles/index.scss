@@ -1,9 +1,9 @@
 @import "src/styles/index";
 
-html, body, .page { height: 100%; }
+// html, body, .page { height: 100vh; }
 
-.page {
-  display: flex;
+.container .page.row {
+  padding-top: 60px;
 }
 
 @import "aside";
