@@ -13,6 +13,7 @@ $ui-3: #d1d2d3;
 $ui-4: #ededed;
 $ui-5: #f6f6f6;
 $ui-6: #fff;
+$ui-7: #000;
 
 
 $colors: (
@@ -31,6 +32,7 @@ $colors: (
   'ui-4': $ui-4,
   'ui-5': $ui-5,
   'ui-6': $ui-6,
+  'ui-7': $ui-7,
 
   'pacific-blue': $core-1,
   'turquoise': $core-2,
@@ -46,21 +48,23 @@ $colors: (
   'light-gray': $ui-3,
   'isabelline': $ui-4,
   'white-smoke': $ui-5,
-  'white': $ui-6
-
+  'white': $ui-6,
+  'black': $ui-7
 );
-
-
-@function get-color( $name ) {
-  @if map-has-key( $colors, $name ) {
-    @return map-get( $colors, $name );
-  } @else {
-    @error "Sorry '#{$name}' color doesn't exists";
-  }
-}
 
 
 @each $name, $hex in $colors {
   .#{$name}-color { color: $hex; }
   .#{$name}-background-color { background-color: $hex; }
+}
+
+
+@function get-color( $name, $alpha: 1 ) {
+  @if ( map-has-key( $colors, $name ) ) {
+    $color: map-get( $colors, $name );
+    @return if( $alpha == 1, $color, rgba(  $color, $alpha ) );
+  }
+  @else {
+    @error "Sorry '#{ $name }' color doesn't exists";
+  }
 }
