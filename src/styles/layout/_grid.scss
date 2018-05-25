@@ -1,18 +1,10 @@
-$column-spacing: 30px;
-$column-gutter: ( $column-spacing / 2 );
-
-$row-spacing: 30px;
-$row-gutter: ( $row-spacing / 2 );
-
-$column-count: 12;
-$word-columns: (
-  one two three four five six seven eight nine ten eleven twelve
-);
-
-
 .container {
-  padding: 0 $column-gutter;
+  margin: 0 auto;
+  max-width: map-get( $breakpoints, 'xxlarge' );
+  padding: 0 gutter( $column-spacing );
+  width: 100%;
 }
+
 
 .grid {
   align-items: stretch;
@@ -26,8 +18,8 @@ $word-columns: (
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding-bottom: $row-gutter;
-    padding-top: $row-gutter;
+    padding-bottom: gutter( $row-spacing );
+    padding-top: gutter( $row-spacing );
     position: relative;
     width: 100% !important;
 
@@ -40,19 +32,11 @@ $word-columns: (
 
   .column {
     display: inline-block;
-    padding-left: $column-gutter;
-    padding-right: $column-gutter;
+    padding-left: gutter( $column-spacing );
+    padding-right: gutter( $column-spacing );
     position: relative;
     vertical-align: top;
     width: 100%;
-  }
-
-  @each $word-column in $word-columns {
-    $index: index( $word-columns, $word-column );
-
-    .#{$word-column}.column {
-      width: ( $index / $column-count * 100% ) !important
-    }
   }
 
   .with-no-row-gutter    { padding-top: 0; padding-bottom: 0; }
@@ -63,4 +47,22 @@ $word-columns: (
   .is-aligned-center  { justify-content: center; }
   .with-space-between { justify-content: space-between; }
   .with-space-around  { justify-content: space-around; }
+
+  @each $word-column in $word-columns {
+    $index: index( $word-columns, $word-column );
+
+    .#{$word-column}.column {
+      width: ( $index / $column-count * 100% ) !important;
+    }
+  }
+
+  @each $breakpoint, $resolution in $breakpoints {
+    @include media-query( $breakpoint, 'min' ) {
+      @for $index from 1 through $column-count {
+        .#{$breakpoint}-#{$index}.column {
+          width: ( $index / $column-count * 100% ) !important;
+        }
+      }
+    }
+  }
 }

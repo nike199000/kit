@@ -1,0 +1,22 @@
+$column-count: 12;
+$word-columns: (
+  one two three four five six seven eight nine ten eleven twelve
+);
+
+$column-spacing: 30px;
+$row-spacing: 30px;
+
+$breakpoints: (
+  // 'xxsmall':  0px,
+  'xsmall':  320px,
+  'small':   576px,
+  'medium':  768px,
+  'large':   992px,
+  'xlarge':  1200px,
+  'xxlarge': 1440px
+);
+
+
+@function gutter( $number ) {
+  @return $number / 2;
+}

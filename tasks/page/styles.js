@@ -2,7 +2,7 @@ const SASS_CONFIG = {
   includePaths: [
     'node_modules/'
   ],
-  outputStyle: 'compressed'
+  outputStyle: 'expanded'
 };
 
 const AUTOPREFIXER_CONFIG = {
