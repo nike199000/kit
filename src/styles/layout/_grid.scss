@@ -1,8 +1,17 @@
 .container {
   margin: 0 auto;
-  max-width: map-get( $breakpoints, 'xxlarge' );
   padding: 0 gutter( $column-spacing );
   width: 100%;
+
+  @include media-query( 'small', 'max' ) {
+    padding: 0 gutter( $small-column-spacing );
+  }
+
+  @each $container, $width in $container-widths {
+    @include media-query( $container, 'min' ) {
+      max-width: $width;
+    }
+  }
 }
 
 
@@ -23,6 +32,10 @@
     position: relative;
     width: 100% !important;
 
+    @include media-query( 'small', 'max' ) {
+      padding-bottom: gutter( $small-row-spacing );
+      padding-top: gutter( $small-row-spacing );
+    }
 
     &:first-child { padding-top: 0; }
     &:last-child  { padding-bottom: 0; }
@@ -37,6 +50,11 @@
     position: relative;
     vertical-align: top;
     width: 100%;
+
+    @include media-query( 'small', 'max' ) {
+      padding-left: gutter( $small-column-spacing );
+      padding-right: gutter( $small-column-spacing );
+    }
   }
 
   .with-no-row-gutter    { padding-top: 0; padding-bottom: 0; }
