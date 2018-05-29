@@ -19,7 +19,7 @@
   ]
 %}
 
-<aside class="aside is-blue-background-colour xsmall-12 medium-2 column">
+<aside class="aside is-blue-background-colour xsmall-12 medium-3 column">
 
   <h4 class="h4 is-bold">
     Kit %%GULP_INJECT_VERSION%%
@@ -29,9 +29,9 @@
     An easy peasy design framework.
   </p>
 
-  <ol class="menu">
+  <ol class="menu row with-no-gutters">
     {% for category in menu %}
-      <li class="category">
+      <li class="category xsmall-4 small-3 medium-12 column with-no-gutters">
         <h5 class="h5 is-capitalize">
           {{ loop.index + '. ' + category.name }}
         </h5>

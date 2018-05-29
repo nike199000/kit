@@ -2,7 +2,7 @@
   set colors = [
     {
       name: 'core',
-      column: 'four',
+      columns: 'small-6 medium-4',
       swatches: [
         {
           'name': 'Pacific Blue',
@@ -23,7 +23,7 @@
     },
     {
       name: 'support',
-      column: 'three',
+      columns: 'small-6 medium-3',
       swatches: [
         {
           'name': 'May Green',
@@ -49,7 +49,7 @@
     },
     {
       name: 'ui',
-      column: 'two',
+      columns: 'xsmall-6 small-4 medium-2',
       swatches: [
         {
           'name': 'Sonic Silver',
@@ -86,7 +86,7 @@
   ]
 %}
 
-<section class="section colors grid">
+<section class="section colors">
   <header class="row">
     <h5 class="header h5 twelve column">Colors</h5>
   </header>
@@ -98,25 +98,25 @@
 
     <ul class="swatches row">
       {% for swatch in color.swatches %}
-        <li class="swatch {{ color.column }} column">
-          <div class="background {{ color.name + '-' + loop.index }}-background-color row with-no-gutter is-aligned-right">
+        <li class="swatch {{ color.columns }} column">
+          <div class="background {{ color.name + '-' + loop.index }}-background-color row with-no-gutters is-aligned-right">
             {% if color.name != 'ui' %}
-              <div class="shade-10 two column with-no-gutter"></div>
-              <div class="shade-30 two column with-no-gutter"></div>
-              <div class="shade-50 two column with-no-gutter"></div>
+              <div class="shade-10 two column"></div>
+              <div class="shade-30 two column"></div>
+              <div class="shade-50 two column"></div>
             {% endif %}
           </div>
 
           <ul class="details small-text ui-3-color">
-            <li class="detail is-capitalize row with-no-gutter with-space-between">
+            <li class="detail is-capitalize row with-no-gutters with-space-between">
               <strong class="caption is-semibold core-3-color {{ 'is-uppercase' if color.name == 'ui' }}">{{ color.name + ' ' + loop.index }}</strong>
               <span class="swatch-name">{{ swatch.name }}</span>
             </li>
-            <li class="detail row with-no-gutter with-space-between">
+            <li class="detail row with-no-gutters with-space-between">
               <span class="is-uppercase">hex</span>
               <span>{{ swatch.hex }}</span>
             </li>
-            <li class="detail row with-no-gutter with-space-between">
+            <li class="detail row with-no-gutters with-space-between">
               <span class="is-uppercase">rgb</span>
               <span>{{ swatch.rgb }}</span>
             </li>

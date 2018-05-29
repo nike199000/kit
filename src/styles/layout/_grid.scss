@@ -1,3 +1,8 @@
+// .container { border: 1px solid yellow; }
+// .grid { border: 1px solid blue; }
+// .row { border: 1px solid red; }
+// .column { border: 1px solid green; }
+
 .container {
   margin: 0 auto;
   padding: 0 gutter( $column-spacing );
@@ -27,20 +32,21 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin-left: gutter( -$column-spacing );
+    margin-right: gutter( -$column-spacing );
     padding-bottom: gutter( $row-spacing );
     padding-top: gutter( $row-spacing );
     position: relative;
-    width: 100% !important;
 
     @include media-query( 'small', 'max' ) {
+      margin-left: gutter( -$small-column-spacing );
+      margin-right: gutter( -$small-column-spacing );
       padding-bottom: gutter( $small-row-spacing );
       padding-top: gutter( $small-row-spacing );
     }
 
     &:first-child { padding-top: 0; }
     &:last-child  { padding-bottom: 0; }
-    .column:first-child { padding-left: 0; }
-    .column:last-child  { padding-right: 0; }
   }
 
   .column {
@@ -57,9 +63,17 @@
     }
   }
 
-  .with-no-row-gutter    { padding-top: 0; padding-bottom: 0; }
-  .with-no-column-gutter { padding-left: 0; padding-right: 0; }
-  .with-no-gutter        { padding: 0; }
+  .with-no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+
+    & > [class*="column"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 
   .is-aligned-right   { justify-content: flex-end; }
   .is-aligned-center  { justify-content: center; }

@@ -29,9 +29,15 @@
       .swatch-name { line-height: 25px; }
       &:first-child { margin-bottom: 5px; }
     }
+
+    @include media-query( 'large', 'maximum' ) {
+      .swatch {
+        margin-bottom: gutter( $row-spacing );
+      }
+    }
   }
 
-  .layout .grid {
+  .layout > .twelve.column {
     .row {
       border: 2px dashed get-color('may-green');
     }
