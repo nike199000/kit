@@ -23,5 +23,6 @@ body {
 .is-block { display: block !important; }
 .is-hidden { opacity: 0; visibility: hidden; }
 .is-not-visible { visibility: hidden; }
+.is-rounded { border-radius: $border-radius; }
 
 .have-border-radius { border-radius: $border-radius; }
