@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel ",
+    "dev": "parcel pages/views/index.njk",
     "build": "parcel build src/index.scss"
   },
   "author": "Idan Goldman",
@@ -13,7 +13,6 @@
   "devDependencies": {
     "npm-check-updates": "^3.1.8",
     "parcel-bundler": "^1.12.3",
-    "parcel-plugin-nunjucks": "^1.1.0",
     "sass": "^1.19.0"
   },
   "dependencies": {}
