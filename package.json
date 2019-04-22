@@ -3,29 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "build": "./node_modules/.bin/gulp build",
-    "dev-server": "./node_modules/.bin/gulp dev-server"
-  },
-  "author": "",
-  "license": "ISC",
+  "scripts": {},
+  "author": "Idan Goldman",
+  "license": "UNLICENSED",
+  "private": true,
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
-    "del": "^3.0.0",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-connect": "^5.5.0",
-    "gulp-inject": "^4.3.2",
-    "gulp-inject-version": "^1.0.1",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-nunjucks": "^3.1.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.1",
-    "gulp-svgmin": "^1.2.4",
-    "gulp-svgstore": "^6.1.1"
-  }
+    "npm-check-updates": "^3.1.8"
+  },
+  "dependencies": {}
 }

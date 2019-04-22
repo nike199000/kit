@@ -1,7 +1,7 @@
 # Kit
 
 ## Installation
-For this to work you will have to have node, if you don't have it please install  [nvm](https://github.com/creationix/nvm#install-script) (node version manager) with latest node version.
+For this to work you will have to have node, if you don't have it please install [nvm](https://github.com/creationix/nvm#install-script) (node version manager) with latest node version.
 
 Afterwards run those commands to install the Kit repository
 
