@@ -1,4 +1,13 @@
-$base-text-size: 16px !default;
+// Colors
+$base-color: #000 !default;
+$base-link-color: #0000EE !default;
+
+
+// Fonts: size
+$base-font-size: 16px !default;
+$base-rem: $base-font-size !default;
+
+// Fonts: family
 $base-font-family: (
   Roboto,
   -apple-system,
@@ -13,8 +22,8 @@ $base-font-family: (
   "Segoe UI Symbol",
   "Noto Color Emoji"
 ) !default;
-$base-rem: $base-text-size !default;
-$base-color: #000;
-// $base-link-color: ;
+$header-font-family: $base-font-family !default;
 
+
+// Misc
 $border-radius: 2px !default;
