@@ -22,15 +22,15 @@
   justify-content: flex-start;
   margin-left: gutter( -$column-spacing );
   margin-right: gutter( -$column-spacing );
-  padding-bottom: gutter( $row-spacing );
-  padding-top: gutter( $row-spacing );
+  // padding-bottom: gutter( $row-spacing );
+  // padding-top: gutter( $row-spacing );
   position: relative;
 
   @include media-query( 'small', 'max' ) {
     margin-left: gutter( -$small-column-spacing );
     margin-right: gutter( -$small-column-spacing );
-    padding-bottom: gutter( $small-row-spacing );
-    padding-top: gutter( $small-row-spacing );
+    // padding-bottom: gutter( $small-row-spacing );
+    // padding-top: gutter( $small-row-spacing );
   }
 
   &:first-child { padding-top: 0; }
