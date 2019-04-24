@@ -1,12 +1,12 @@
-$column-count: 12;
+$column-count: 12 !default;
 $word-columns: (
   one two three four five six seven eight nine ten eleven twelve
-);
+) !default;
 
-$column-spacing:       30px;
-$row-spacing:          30px;
-$small-column-spacing: 20px;
-$small-row-spacing:    20px;
+$column-spacing:       30px !default;
+$row-spacing:          30px !default;
+$small-column-spacing: 20px !default;
+$small-row-spacing:    20px !default;
 
 $breakpoints: (
   'xsmall':  320px,
@@ -14,15 +14,11 @@ $breakpoints: (
   'medium':  768px,
   'large':   992px,
   'xlarge':  1200px
-);
+) !default;
 
 $container-widths: (
   'small':   540px,
   'medium':  720px,
   'large':   960px,
   'xlarge':  1140px
-);
-
-@function gutter($number) {
-  @return $number / 2;
-}
+) !default;
