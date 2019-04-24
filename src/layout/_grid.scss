@@ -5,15 +5,15 @@
 
 .container {
   margin: 0 auto;
-  padding: 0 gutter( $column-spacing );
+  padding: 0 gutter($column-spacing);
   width: 100%;
 
-  @include media-query( 'small', 'max' ) {
-    padding: 0 gutter( $small-column-spacing );
+  @include media-query('small', 'max') {
+    padding: 0 gutter($small-column-spacing);
   }
 
   @each $container, $width in $container-widths {
-    @include media-query( $container, 'min' ) {
+    @include media-query($container, 'min') {
       max-width: $width;
     }
   }
@@ -57,7 +57,7 @@
     vertical-align: top;
     width: 100%;
 
-    @include media-query( 'small', 'max' ) {
+    @include media-query('small', 'max') {
       padding-left: gutter( $small-column-spacing );
       padding-right: gutter( $small-column-spacing );
     }
@@ -81,18 +81,18 @@
   .with-space-around  { justify-content: space-around; }
 
   @each $word-column in $word-columns {
-    $index: index( $word-columns, $word-column );
+    $index: index($word-columns, $word-column);
 
     .#{$word-column}.column {
-      width: ( $index / $column-count * 100% ) !important;
+      width: ($index / $column-count * 100%) !important;
     }
   }
 
   @each $breakpoint, $resolution in $breakpoints {
-    @include media-query( $breakpoint, 'min' ) {
+    @include media-query($breakpoint, 'min') {
       @for $index from 1 through $column-count {
         .#{$breakpoint}-#{$index}.column {
-          width: ( $index / $column-count * 100% ) !important;
+          width: ($index / $column-count * 100%) !important;
         }
       }
     }

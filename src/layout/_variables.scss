@@ -3,10 +3,10 @@ $word-columns: (
   one two three four five six seven eight nine ten eleven twelve
 );
 
-$column-spacing: 30px;
-$row-spacing: 30px;
+$column-spacing:       30px;
+$row-spacing:          30px;
 $small-column-spacing: 20px;
-$small-row-spacing: 20px;
+$small-row-spacing:    20px;
 
 $breakpoints: (
   'xsmall':  320px,
@@ -23,7 +23,6 @@ $container-widths: (
   'xlarge':  1140px
 );
 
-
-@function gutter( $number ) {
+@function gutter($number) {
   @return $number / 2;
 }

@@ -1,10 +1,29 @@
-@import "src/styles/index";
-
-// html, body, .page { height: 100vh; }
+@import "src/index";
 
 .container .page.row {
   padding-top: 60px;
 }
 
-@import "aside";
-@import "main";
+.main {
+  padding-top: 120px;
+
+  .section { padding-bottom: 120px; }
+
+  .layout > .twelve.column {
+    .row {
+      border: 2px dashed green;
+    }
+
+    .column {
+      border: 2px dashed gold;
+    }
+
+    .component {
+      background-color: blue;
+      border-radius: $border-radius;
+      color: white;
+      text-align: center;
+      padding: 5px 0;
+    }
+  }
+}
