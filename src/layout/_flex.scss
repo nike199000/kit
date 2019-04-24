@@ -51,18 +51,6 @@
   }
 }
 
-.with-no-gutters {
-  margin-left: 0;
-  margin-right: 0;
-  padding-bottom: 0;
-  padding-top: 0;
-
-  & > [class*="column"] {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
 @each $word-column in $word-columns {
   $index: index($word-columns, $word-column);
 
