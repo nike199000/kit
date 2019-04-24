@@ -35,8 +35,13 @@
 
 .btn-link {
   color: $base-link-color;
+  text-decoration: underline;
 
   &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
     text-decoration: underline;
   }
 }
