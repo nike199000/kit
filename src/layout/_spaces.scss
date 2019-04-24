@@ -1,5 +1,11 @@
-.is-aligned-right   { justify-content: flex-end !important; }
+.is-aligned-left    { justify-content: flex-start !important; }
 .is-aligned-center  { justify-content: center !important; }
+.is-aligned-right   { justify-content: flex-end !important; }
+.is-aligned-items-left    { align-items: flex-start !important; }
+.is-aligned-items-center  { align-items: center !important; }
+.is-aligned-items-right   { align-items: flex-end !important; }
+
+
 .with-space-between { justify-content: space-between !important; }
 .with-space-around  { justify-content: space-around !important; }
 
