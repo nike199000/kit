@@ -22,3 +22,10 @@ $container-widths: (
   'large':   960px,
   'xlarge':  1140px
 ) !default;
+
+$flex-directions: (
+  // row, (default)
+  row-reverse,
+  column,
+  column-reverse
+) !default;
