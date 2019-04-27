@@ -34,3 +34,4 @@ a {
 .is-hidden { opacity: 0 !important; visibility: hidden !important; }
 .is-not-visible { visibility: hidden; }
 .is-round { border-radius: $border-radius; }
+.with-full-width { max-width: 100% !important; width: 100% !important; }
