@@ -1,0 +1,18 @@
+@import "svgs-container";
+@import "video-wrap";
+
+.is-none { display: none !important; }
+.is-block { display: block !important; }
+.is-hidden { opacity: 0 !important; visibility: hidden !important; }
+.is-not-visible { visibility: hidden; }
+
+.is-round { border-radius: 50%; }
+
+.with-full-width {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.dead-pixel {
+  @extend .svgs-container;
+}

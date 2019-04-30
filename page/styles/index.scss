@@ -1,10 +1,25 @@
-@import "src/styles/index";
+@import "src/index";
 
-// html, body, .page { height: 100vh; }
-
-.container .page.row {
-  padding-top: 60px;
+.container {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-@import "aside";
-@import "main";
+
+.layout.twelve.column {
+  .row {
+    border: 2px dashed green;
+  }
+
+  .column {
+    border: 2px dashed gold;
+  }
+
+  .component {
+    background-color: blue;
+    border-radius: $border-radius;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+  }
+}

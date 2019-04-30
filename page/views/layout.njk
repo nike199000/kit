@@ -40,21 +40,14 @@
   ]
 %}
 
-<section class="section layout">
-  <header class="row">
-    <h5 class="header h5 twelve column">Layout</h5>
-  </header>
-
-  <section class="twelve column">
-    {% for row in layout %}
-      <div class="row">
-        {% for column in row %}
-          <div class="{{ column[0] }} column">
-            <div class="component">{{ column[1] }}</div>
-          </div>
-        {% endfor %}
-      </div>
-    {% endfor %}
-  </section>
-
+<section class="layout twelve column">
+  {% for row in layout %}
+    <div class="row">
+      {% for column in row %}
+        <div class="{{ column[0] }} column">
+          <div class="component">{{ column[1] }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
 </section>

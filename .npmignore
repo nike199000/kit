@@ -1,6 +1,3 @@
-tasks/
 build/
 page/
 .editorconfig
-.babelrc
-gulpfile.babel.js

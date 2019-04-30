@@ -1,0 +1,32 @@
+// Colors
+$base-background-color: #fff !default;
+$base-color: #000 !default;
+$base-link-color: #00e !default;
+$primary-color: #000 !default;
+$secondary-color: #000 !default;
+
+
+// Fonts: size
+$base-font-size: 16px !default;
+$base-rem: $base-font-size !default;
+
+// Fonts: family
+$base-font-family: (
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  Arial,
+  "Noto Sans",
+  sans-serif,
+  "Apple Color Emoji",
+  "Segoe UI Emoji",
+  "Segoe UI Symbol",
+  "Noto Color Emoji"
+) !default;
+$header-font-family: $base-font-family !default;
+
+
+// Misc
+$border-radius: 2px !default;
