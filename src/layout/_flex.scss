@@ -68,5 +68,13 @@
         flex-direction: $flex-direction;
       }
     }
+
+    .#{$breakpoint}\:auto-right { margin-right: auto !important; }
+    .#{$breakpoint}\:auto-left  { margin-left: auto !important; }
+    .#{$breakpoint}\:auto-both  { margin: 0 auto !important; }
+
+    .#{$breakpoint}\:text-left   { text-align: left !important; }
+    .#{$breakpoint}\:text-center { text-align: center !important; }
+    .#{$breakpoint}\:text-right  { text-align: right !important; }
   }
 }

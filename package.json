@@ -2,9 +2,12 @@
   "name": "kit",
   "version": "0.0.2",
   "description": "",
+  "engines": {
+    "node": "10.16.0"
+  },
   "main": "index.js",
   "scripts": {
-    "dev": "parcel page/views/index.njk",
+    "dev": "parcel page/views/index.njk --port 321",
     "build": "parcel build src/index.scss"
   },
   "author": "Idan Goldman",
