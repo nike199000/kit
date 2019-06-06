@@ -5,7 +5,6 @@
 .is-aligned-items-center  { align-items: center !important; }
 .is-aligned-items-right   { align-items: flex-end !important; }
 
-
 .with-space-between { justify-content: space-between !important; }
 .with-space-around  { justify-content: space-around !important; }
 
@@ -25,4 +24,7 @@
 .auto-left  { margin-left: auto !important; }
 .auto-both  { margin: 0 auto !important; }
 
-.full-width { width: 100% !important; }
+.with-full-width {
+  max-width: 100% !important;
+  width: 100% !important;
+}
