@@ -1,6 +1,5 @@
 // @media not|only mediatype and ( media feature and|or|not media feature )
 @mixin media-query( $size, $scale: 'only' ) {
-  $index: index( map-keys( $breakpoints ), $size );
   $query: '';
 
   @if ( index(( 'minimum', 'min' ), $scale ) ) {

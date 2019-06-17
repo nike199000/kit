@@ -9,9 +9,9 @@
 .is-lowercase  { text-transform: lowercase !important; }
 .is-uppercase  { text-transform: uppercase !important; }
 
-.text-left   { text-align: left; }
-.text-center { text-align: center; }
-.text-right  { text-align: right; }
+.text-left   { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right  { text-align: right !important; }
 
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: $header-font-family;

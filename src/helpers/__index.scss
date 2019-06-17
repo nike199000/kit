@@ -8,11 +8,6 @@
 
 .is-round { border-radius: 50%; }
 
-.with-full-width {
-  max-width: 100% !important;
-  width: 100% !important;
-}
-
 .dead-pixel {
   @extend .svgs-container;
 }
