@@ -1,0 +1,36 @@
+*
+  border: 0
+  margin: 0
+  outline: 0
+  padding: 0
+
+  &:before, &:after
+    box-sizing: inherit
+
+ul, ol, dl
+  list-style-type: none
+
+html
+  box-sizing: border-box
+  font-size: $base-rem
+
+body
+  // Antialiased experimental shit
+  text-rendering: optimizeLegibility
+  text-rendering: geometricPrecision
+  font-smooth: always
+  font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  background-color: $base-background-color
+
+body, button, input, select, textarea
+  color: $base-color
+  font-family: $base-font-family
+  font-size: 1rem
+  font-weight: 400
+
+a
+  color: $base-link-color
+
+  &:hover
+    text-decoration: none

@@ -1,0 +1,76 @@
+.container
+  margin: 0 auto
+  padding: 0 gutter($column-spacing)
+  width: 100%
+
+  @include media-query('small', 'max')
+    padding: 0 gutter($small-column-spacing)
+
+  @each $container, $width in $container-widths
+    @include media-query($container, 'min')
+      max-width: $width
+
+.row
+  align-items: stretch
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: flex-start
+  margin-left: gutter(-$column-spacing)
+  margin-right: gutter(-$column-spacing)
+  position: relative
+
+  @include media-query('small', 'max')
+    margin-left: gutter(-$small-column-spacing)
+    margin-right: gutter(-$small-column-spacing)
+
+  &:first-child
+    padding-top: 0
+  &:last-child
+    padding-bottom: 0
+
+.column
+  display: inline-block
+  padding-left: gutter($column-spacing)
+  padding-right: gutter($column-spacing)
+  position: relative
+  vertical-align: top
+  width: 100%
+
+  @include media-query('small', 'max')
+    padding-left: gutter($small-column-spacing)
+    padding-right: gutter($small-column-spacing)
+
+@each $word-column in $word-columns
+  $index: index($word-columns, $word-column)
+
+  .#{$word-column}.column
+    width: ($index / $column-count * 100%) !important
+
+@each $breakpoint, $resolution in $breakpoints
+  @include media-query($breakpoint, 'min')
+    @for $index from 1 through $column-count
+      .#{$breakpoint}-#{$index}.column
+        width: ($index / $column-count * 100%) !important
+
+    @each $flex-direction in $flex-directions
+      .#{$breakpoint}-direction-#{$flex-direction}
+        flex-direction: $flex-direction
+
+    .#{$breakpoint}\:auto-right
+      margin-right: auto !important
+
+    .#{$breakpoint}\:auto-left
+      margin-left: auto !important
+
+    .#{$breakpoint}\:auto-both
+      margin: 0 auto !important
+
+    .#{$breakpoint}\:text-left
+      text-align: left !important
+
+    .#{$breakpoint}\:text-center
+      text-align: center !important
+
+    .#{$breakpoint}\:text-right
+      text-align: right !important
