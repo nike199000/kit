@@ -1,6 +1,8 @@
 @import "svgs-container"
 @import "video-wrap"
 
+
+// Classes
 .is-none
   display: none !important
 
@@ -17,5 +19,17 @@
 .is-round
   border-radius: 50%
 
-.dead-pixel
-  @extend %svgs-container
+
+// Functions
+@function px2rem($value)
+  @return ($value / $base-rem) + rem
+
+
+// Mixins
+@mixin no-select
+  user-select: none
+
+@mixin text-break
+  white-space: pre-line
+  word-break: break-word
+  word-wrap: break-word
