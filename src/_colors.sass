@@ -1,0 +1,81 @@
+$green-color:  #2da42c !default
+$blue-color:   #3477ff !default
+$purple-color: #802efb !default
+$red-color:    #ef3360 !default
+$yellow-color: #ffc800 !default
+$black-color:  #071417 !default
+$white-color:  #fff    !default
+
+$brand-color:  $green-color !default
+$action-color: $blue-color  !default
+
+$palette: (
+  green:  $green-color
+  blue:   $blue-color
+  purple: $purple-color
+  red:    $red-color
+  yellow: $yellow-color
+  black:  $black-color
+  white:  $white-color
+
+  brand:  $brand-color
+  action: $action-color
+) !default
+
+$variants-color-alpha: (
+  100: 0.14,
+  200: 0.28,
+  300: 0.42
+) !default
+
+$variants-bw-alpha: (
+  50:  0.7,
+  100: 0.14,
+  150: 0.21,
+  200: 0.28,
+  250: 0.35,
+  300: 0.42
+) !default
+
+
+@function get-color($color: null)
+  @if $color and map-has-key($palette, $color)
+    @return map-get($palette, $color)
+  @else
+    @error "Sorry '#{$color}' color doesn't exists"
+
+@function get-variant($list, $item)
+  @if map-has-key($list, $item)
+    @return map-get($list, $item)
+  @else
+    @error "Sorry '#{$item}' variant doesn't exists"
+
+@function get-alpha($color: white, $variant: null)
+  $alpha: 1
+
+  @if $variant and str-index("black white", $color)
+    $alpha: get-variant($variants-bw-alpha, $variant)
+  @else if $variant
+    $alpha: get-variant($variants-bw-alpha, $variant)
+
+  @return $alpha
+
+@function color($name, $variant: null)
+  $color: get-color($name)
+  $alpha: get-alpha($variant)
+
+  @return @if $alpha == 1, $color, rgba($color, $alpha)
+
+@mixin color($name, $variant: null)
+  color: color($name, $variant: null)
+
+// body
+//   @include color(brand, 100)
+//   or
+//   color: color(yellow)
+
+// Extra classes
+// @each $name, $hex in $colors
+//   .#{$name}-color { color: $hex }
+//   .#{$name}-background-color { background-color: $hex }
+//
