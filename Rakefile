@@ -10,6 +10,10 @@ task "test:watch" do
   exec("yarn test:watch")
 end
 
-task "docs" do
-  exec("yarn docs")
+task "doc" do
+  exec("yarn doc")
+end
+
+task "doc:open" do
+  exec("yarn doc:open")
 end
