@@ -1,22 +1,45 @@
+/// Gets a color HEX from `$color-palette` variable.
+/// @access private
+/// @param {string} $color [null] Name of a color
+/// @return {color} Value in HEX format
+/// @throw Sorry '#{$color}' color doesn't exists.
+/// @example
+///   get-color('green'); // #2da42c
 @function get-color($color: null) {
   @if $color and map-has-key($color-palette, quote($color)) {
     @return map-get($color-palette, quote($color));
   }
   @else {
-    @error "Sorry '#{$color}' color doesn't exists";
+    @error "Sorry '#{$color}' color doesn't exists.";
   }
 }
 
+/// Matches given `$variant` to the alpha value in given `$variants` map.
+/// @access private
+/// @param {map} $variants Map of varients and their alphas
+/// @param {number} $variant A number between 100-300 multiples by 100 for colors, and a number between 50-300 multiples by 50 for black and white colors.
+/// @return {number} A number between 0 to 1.
+/// @throw Sorry '#{$variant}' variant doesn't exists.
+/// @example
+///   get-alpha-variant($variants-bw-alpha, 100); // 0.14
 @function get-alpha-variant($variants, $variant) {
   @if map-has-key($variants, quote($variant)) {
     @return map-get($variants, quote($variant));
   }
   @else {
-    @error "Sorry '#{$variant}' variant doesn't exists";
+    @error "Sorry '#{$variant}' variant doesn't exists.";
   }
 }
 
-@function get-alpha($color: white, $variant: null) {
+/// Gets the alpha value of a color by it's varient.
+/// @access private
+/// @param {string} $color Name of a color to determine which varients map to use.
+/// @param {number} $variant A number between 100-300 multiples by 100 for colors, and a number between 50-300 multiples by 50 for black and white colors.
+/// @return {number} A number between 0 to 1.
+/// @example
+///   get-alpha('black', 50) // 0.07
+///   get-alpha('green') // 1
+@function get-alpha($color, $variant: null) {
   $alpha: 1;
 
   @if $variant and str-index('black white', quote($color)) {

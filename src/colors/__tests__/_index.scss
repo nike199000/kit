@@ -39,7 +39,7 @@
     }
   }
 
-  @include test('Return color param with red rgba value with variant') {
+  @include test('Return color param with red RGBA value with variant') {
     @include assert {
       @include output {
         @include color('red', 300);
@@ -47,6 +47,18 @@
 
       @include expect {
         color: rgba(#ef3360, 0.42);
+      }
+    }
+  }
+
+  @include test('Return background color param with red HEX value') {
+    @include assert {
+      @include output {
+        @include background-color('red');
+      }
+
+      @include expect {
+        background-color: #ef3360;
       }
     }
   }

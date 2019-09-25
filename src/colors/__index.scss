@@ -1,6 +1,16 @@
 @import 'locals';
 @import 'functions';
 
+/// Generates a color value in HEX or RGBA based on `$color-palette` map.
+/// @param {string} $name [null] The name of a color
+/// @param {number} $variant [null] The varient of a color
+/// @return {color} Value in HEX or RGBA format.
+/// @throw An error if a color name or varient aren't found.
+/// @example
+///   body {
+///     background-color: palette('green');
+///     color: palette('black', 300);
+///   }
 @function palette($name: null, $variant: null) {
   $color: get-color($name);
   $alpha: get-alpha($name, $variant);
@@ -8,11 +18,26 @@
   @return if($alpha == 1, $color, rgba($color, $alpha));
 }
 
+/// Color mixin wrapper for palatte function.
+/// @param {string} $name [null] The name of a color
+/// @param {number} $variant [null] The varient of a color
+/// @output `color` param with HEX or RGBA value
+/// @example
+///   body {
+///     @include color('black', 300);
+///   }
 @mixin color($name: null, $variant: null) {
   color: palette($name, $variant);
 }
 
-// body
-//   @include color(brand, 100)
-//   or
-//   color: palette(yellow, 100)
+/// Background color mixin wrapper for palatte function.
+/// @param {string} $name [null] The name of a color
+/// @param {number} $variant [null] The varient of a color
+/// @output `background-color` param with HEX or RGBA value
+/// @example
+///   body {
+///     @include background-color('black', 300);
+///   }
+@mixin background-color($name: null, $variant: null) {
+  background-color: palette($name, $variant);
+}

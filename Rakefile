@@ -15,5 +15,5 @@ task "doc" do
 end
 
 task "doc:open" do
-  exec("yarn doc:open")
+  exec("yarn doc; yarn doc:open")
 end
