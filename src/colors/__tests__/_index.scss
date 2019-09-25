@@ -1,0 +1,53 @@
+@import 'true';
+@import '../_index';
+
+@include describe('Test color functionality') {
+  @include test('Return HEX color of green') {
+    @include assert-equal(
+      palette(green),
+      #2da42c
+    );
+  }
+
+  @include test('Return HEX color of action') {
+    @include assert-equal(
+      palette(action),
+      #3477ff
+    );
+  }
+
+  @include test('Return RGBA color of yellow with variant') {
+    @include assert-equal(
+      palette(yellow, 100),
+      rgba(#ffc800, 0.14)
+    );
+  }
+
+  @include test('Return RGBA color of white with variant') {
+    @include assert-equal(palette(white, 100), rgba(#fff, 0.14));
+  }
+
+  @include test('Return color param with red HEX value') {
+    @include assert {
+      @include output {
+        @include color(red);
+      }
+
+      @include expect {
+        color: #ef3360;
+      }
+    }
+  }
+
+  @include test('Return color param with red rgba value with variant') {
+    @include assert {
+      @include output {
+        @include color(red, 300);
+      }
+
+      @include expect {
+        color: rgba(#ef3360, 0.42);
+      }
+    }
+  }
+}

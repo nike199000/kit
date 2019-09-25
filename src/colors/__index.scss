@@ -1,0 +1,18 @@
+@import 'locals';
+@import 'functions';
+
+@function palette($name: null, $variant: null) {
+  $color: get-color($name);
+  $alpha: get-alpha($name, $variant);
+
+  @return if($alpha == 1, $color, rgba($color, $alpha));
+}
+
+@mixin color($name: null, $variant: null) {
+  color: palette($name, $variant);
+}
+
+// body
+//   @include color(brand, 100)
+//   or
+//   color: palette(yellow, 100)

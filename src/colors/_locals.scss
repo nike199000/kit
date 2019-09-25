@@ -9,30 +9,30 @@ $white-color:  #fff    !default;
 $brand-color:  $green-color !default;
 $action-color: $blue-color  !default;
 
-$palette: (
-  green:  $green-color,
-  blue:   $blue-color,
-  purple: $purple-color,
-  red:    $red-color,
-  yellow: $yellow-color,
-  black:  $black-color,
-  white:  $white-color,
+$color-palette: (
+  'green':  $green-color,
+  'blue':   $blue-color,
+  'purple': $purple-color,
+  'red':    $red-color,
+  'yellow': $yellow-color,
+  'black':  $black-color,
+  'white':  $white-color,
 
-  brand:  $brand-color,
-  action: $action-color
+  'brand':  $brand-color,
+  'action': $action-color
 ) !default;
 
 $variants-color-alpha: (
-  100: 0.14,
-  200: 0.28,
-  300: 0.42
+  '100': 0.14,
+  '200': 0.28,
+  '300': 0.42
 ) !default;
 
 $variants-bw-alpha: (
-  50:  0.7,
-  100: 0.14,
-  150: 0.21,
-  200: 0.28,
-  250: 0.35,
-  300: 0.42
+  '50':  0.7,
+  '100': 0.14,
+  '150': 0.21,
+  '200': 0.28,
+  '250': 0.35,
+  '300': 0.42
 ) !default;

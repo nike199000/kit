@@ -5,7 +5,7 @@ const sass = require('sass');
 
 describe('SASS', () => {
   const sassFiles = glob.sync(
-    path.resolve(__dirname, 'src/**/__tests__/*.s(a|c)ss')
+    path.resolve(__dirname, 'src/**/__tests__/*.scss')
   );
 
   for (let sassFile of sassFiles) {

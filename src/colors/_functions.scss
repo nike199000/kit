@@ -1,0 +1,30 @@
+@function get-color($color: null) {
+  @if $color and map-has-key($color-palette, quote($color)) {
+    @return map-get($color-palette, quote($color));
+  }
+  @else {
+    @error "Sorry '#{$color}' color doesn't exists";
+  }
+}
+
+@function get-alpha-variant($variants, $variant) {
+  @if map-has-key($variants, quote($variant)) {
+    @return map-get($variants, quote($variant));
+  }
+  @else {
+    @error "Sorry '#{$variant}' variant doesn't exists";
+  }
+}
+
+@function get-alpha($color: white, $variant: null) {
+  $alpha: 1;
+
+  @if $variant and str-index('black white', quote($color)) {
+    $alpha: get-alpha-variant($variants-bw-alpha, $variant);
+  }
+  @else if $variant {
+    $alpha: get-alpha-variant($variants-color-alpha, $variant);
+  }
+
+  @return $alpha;
+}
