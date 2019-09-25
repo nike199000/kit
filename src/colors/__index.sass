@@ -1,12 +1,12 @@
-@import "locals"
-@import "functions"
+@import 'locals'
+@import 'functions'
 
 
 @function color($name, $variant: null)
   $color: get-color($name)
   $alpha: get-alpha($variant)
 
-  @return @if $alpha == 1, $color, rgba($color, $alpha)
+  @return if($alpha == 1, $color, rgba($color, $alpha))
 
 
 @mixin color($name, $variant: null)
