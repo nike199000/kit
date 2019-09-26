@@ -1,0 +1,51 @@
+// @media not|only mediatype and (media feature and|or|not media feature)
+@mixin media-query($size, $scale: 'only') {;
+  $query: '';
+
+  @if index(('minimum', 'min'), $scale) {
+    $minimum-size: map-get($breakpoints, $size);
+
+    @if $minimum-size != 0px {
+      $query: '(min-width: #{$minimum-size})';
+    }
+  }
+  @else if index(('maximum', 'max'), $scale) {
+    $maximum-size: map-get($breakpoints, $size) - 1px;
+
+    @if $maximum-size != -1px {
+      $query: '(max-width: #{$maximum-size})';
+    }
+    @else {
+      $query: '(max-width: #{map-next($breakpoints, $size) - 1px})';
+    }
+  }
+  @else if ($scale == 'only') {
+    $minimum-size: map-get($breakpoints, $size);
+    $maximum-size: map-next($breakpoints, $size) - 1px;
+
+    $minimum-size: if(index((0px), $minimum-size), '', '(min-width: #{$minimum-size})');
+    $maximum-size: if(index((0px, '-1px'), $maximum-size), '', '(max-width: #{$maximum-size})');
+
+    @if $minimum-size != '' and $maximum-size != '' {
+      $query: '#{$minimum-size} and #{$maximum-size}';
+    }
+    @else if $maximum-size == '' {
+      $query: '#{$minimum-size}';
+    }
+    @else if $minimum-size == '' {
+      $query: '#{$maximum-size}';
+    }
+  }
+  @else {
+    @error "Sorry '#{$scale}' scale doesn't exists";
+  }
+
+  @if $query != '' {
+    @media only screen and #{$query} {
+      @contentl;
+    }
+  }
+  @else {
+    @content
+  }
+}
