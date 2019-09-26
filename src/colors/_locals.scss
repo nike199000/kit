@@ -1,0 +1,89 @@
+/// @group Colors
+/// @type Color
+$green-color:  #2da42c;
+
+/// @group Colors
+/// @type Color
+$blue-color:   #3477ff;
+
+/// @group Colors
+/// @type Color
+$purple-color: #802efb;
+
+/// @group Colors
+/// @type Color
+$red-color:    #ef3360;
+
+/// @group Colors
+/// @type Color
+$yellow-color: #ffc800;
+
+/// @group Colors
+/// @type Color
+$black-color:  #071417;
+
+/// @group Colors
+/// @type Color
+$white-color:  #fff;
+
+
+/// A map of alpha variants for colors.
+/// @group Colors
+/// @type Map
+$variants-color-alpha: (
+  "100": 0.14,
+  "200": 0.28,
+  "300": 0.42
+);
+
+/// A map of alpha variants for black and white colors.
+/// @group Colors
+/// @type Map
+$variants-bw-alpha: (
+  "50":  0.7,
+  "100": 0.14,
+  "150": 0.21,
+  "200": 0.28,
+  "250": 0.35,
+  "300": 0.42
+);
+
+
+/// Brand colors of the Kit.
+/// @group Colors
+/// @type Color
+$brand-color:  $green-color;
+
+/// Action color of the Kit.
+/// @group Colors
+/// @type Color
+$action-color: $blue-color;
+
+/// Text color of the Kit.
+/// @group Colors
+/// @type Color
+$text-color: $black-color;
+
+/// Background color of the Kit.
+/// @group Colors
+/// @type Color
+$background-color: rgba($black-color, map-get($variants-bw-alpha, "50"));
+
+
+/// A map of all the colors in the Kit.
+/// @group Colors
+/// @type Map
+$color-palette: (
+  "green":      $green-color,
+  "blue":       $blue-color,
+  "purple":     $purple-color,
+  "red":        $red-color,
+  "yellow":     $yellow-color,
+  "black":      $black-color,
+  "white":      $white-color,
+
+  "brand":      $brand-color,
+  "action":     $action-color,
+  "text":       $text-color,
+  "background": $background-color
+);

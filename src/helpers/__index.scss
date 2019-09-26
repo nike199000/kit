@@ -1,0 +1,42 @@
+@import "svgs-container";
+@import "video-wrap";
+
+
+// Classes
+.is-none {
+  display: none !important;
+}
+
+.is-block {
+  display: block !important;
+}
+
+.is-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.is-not-visible {
+  visibility: hidden;
+}
+
+.is-round {
+  border-radius: 50%;
+}
+
+
+// Functions
+@function px2rem($value) {
+  @return ($value / $base-rem) + rem;
+}
+
+// Mixins
+@mixin no-select {
+  user-select: none;
+}
+
+@mixin text-break {
+  white-space: pre-line;
+  word-break: break-word;
+  word-wrap: break-word;
+}

@@ -1,0 +1,51 @@
+[class*="btn-"] {
+  background-color: transparent;
+  border-radius: $border-radius;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 15px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-primary,
+.btn-secondary {
+  color: white;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}
+
+.btn-primary {
+  background-color: palette("brand");
+}
+
+.btn-secondary {
+  background-color: palette("black", 100);
+}
+
+.btn-link {
+  color: palette("action");
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+@function pal() {
+  @return #fff;
+}
