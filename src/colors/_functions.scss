@@ -1,5 +1,6 @@
 /// Gets a color HEX from `$color-palette` variable.
 /// @access private
+/// @group Colors
 /// @param {string} $color [null] Name of a color
 /// @return {color} Value in HEX format
 /// @throw Sorry '#{$color}' color doesn't exists.
@@ -16,6 +17,7 @@
 
 /// Matches given `$variant` to the alpha value in given `$variants` map.
 /// @access private
+/// @group Colors
 /// @param {map} $variants Map of varients and their alphas
 /// @param {number} $variant A number between 100-300 multiples by 100 for colors, and a number between 50-300 multiples by 50 for black and white colors.
 /// @return {number} A number between 0 to 1.
@@ -33,6 +35,7 @@
 
 /// Gets the alpha value of a color by it's varient.
 /// @access private
+/// @group Colors
 /// @param {string} $color Name of a color to determine which varients map to use.
 /// @param {number} $variant A number between 100-300 multiples by 100 for colors, and a number between 50-300 multiples by 50 for black and white colors.
 /// @return {number} A number between 0 to 1.

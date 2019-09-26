@@ -2,6 +2,7 @@
 @import 'functions';
 
 /// Generates a color value in HEX or RGBA based on `$color-palette` map.
+/// @group Colors
 /// @param {string} $name [null] The name of a color
 /// @param {number} $variant [null] The varient of a color
 /// @return {color} Value in HEX or RGBA format.
@@ -19,6 +20,7 @@
 }
 
 /// Color mixin wrapper for palatte function.
+/// @group Colors
 /// @param {string} $name [null] The name of a color
 /// @param {number} $variant [null] The varient of a color
 /// @output `color` param with HEX or RGBA value
@@ -31,6 +33,7 @@
 }
 
 /// Background color mixin wrapper for palatte function.
+/// @group Colors
 /// @param {string} $name [null] The name of a color
 /// @param {number} $variant [null] The varient of a color
 /// @output `background-color` param with HEX or RGBA value
