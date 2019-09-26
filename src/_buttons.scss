@@ -26,15 +26,15 @@
 }
 
 .btn-primary {
-  background-color: palatte("brand");
+  background-color: palette("brand");
 }
 
 .btn-secondary {
-  background-color: palatte("black", 100);
+  background-color: palette("black", 100);
 }
 
 .btn-link {
-  color: palatte("action");
+  color: palette("action");
   text-decoration: underline;
 
   &:hover {
@@ -44,4 +44,8 @@
   &:active {
     text-decoration: underline;
   }
+}
+
+@function pal() {
+  @return #fff;
 }
