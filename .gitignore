@@ -5,7 +5,6 @@
 build
 coverage
 dist
-docs
 sassdocs
 DS_Store
 logs
