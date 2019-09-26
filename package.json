@@ -17,6 +17,9 @@
   "bugs": {
     "url": "https://github.com/idangoldman/kit/issues"
   },
+  "engines": {
+    "node": "10.16.0"
+  },
   "type": "module",
   "moduleRoots": [
     "src/"
