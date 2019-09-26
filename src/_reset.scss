@@ -25,18 +25,18 @@ body {
   font-smooth: always;
   font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $base-background-color;
+  background-color: palatte("background");
 }
 
 body, button, input, select, textarea {
-  color: $base-color;
+  color: palatte("text");
   font-family: $base-font-family;
   font-size: 1rem;
   font-weight: 400;
 }
 
 a {
-  color: $base-link-color;
+  color: palatte("action");
 
   &:hover {
     text-decoration: none;

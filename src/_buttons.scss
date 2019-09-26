@@ -16,23 +16,25 @@
 .btn-secondary {
   color: white;
 
-  &:hover
+  &:hover {
     opacity: 0.9;
+  }
 
-  &:active
+  &:active {
     opacity: 1;
+  }
 }
 
 .btn-primary {
-  background-color: $primary-color;
+  background-color: palatte("brand");
 }
 
 .btn-secondary {
-  background-color: $secondary-color;
+  background-color: palatte("black", 100);
 }
 
 .btn-link {
-  color: $base-link-color;
+  color: palatte("action");
   text-decoration: underline;
 
   &:hover {

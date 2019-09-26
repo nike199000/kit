@@ -3,12 +3,12 @@
   padding: 0 gutter($column-spacing);
   width: 100%;
 
-  @include media-query('small', 'max') {
+  @include media-query("small", "max") {
     padding: 0 gutter($small-column-spacing);
   }
 
   @each $container, $width in $container-widths {
-    @include media-query($container, 'min') {
+    @include media-query($container, "min") {
       max-width: $width;
     }
   }
@@ -24,7 +24,7 @@
   margin-right: gutter(-$column-spacing);
   position: relative;
 
-  @include media-query('small', 'max') {
+  @include media-query("small", "max") {
     margin-left: gutter(-$small-column-spacing);
     margin-right: gutter(-$small-column-spacing);
   }
@@ -46,7 +46,7 @@
   vertical-align: top;
   width: 100%;
 
-  @include media-query('small', 'max') {
+  @include media-query("small", "max") {
     padding-left: gutter($small-column-spacing);
     padding-right: gutter($small-column-spacing);
   }
@@ -61,15 +61,17 @@
 }
 
 @each $breakpoint, $resolution in $breakpoints {
-  @include media-query($breakpoint, 'min') {
+  @include media-query($breakpoint, "min") {
     @for $index from 1 through $column-count {
-      .#{$breakpoint}-#{$index}.column
+      .#{$breakpoint}-#{$index}.column {
         width: ($index / $column-count * 100%) !important;
+      }
     }
 
     @each $flex-direction in $flex-directions {
-      .#{$breakpoint}-direction-#{$flex-direction}
+      .#{$breakpoint}-direction-#{$flex-direction} {
         flex-direction: $flex-direction;
+      }
     }
 
     .#{$breakpoint}\:auto-right {

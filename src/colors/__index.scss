@@ -1,5 +1,5 @@
-@import 'locals';
-@import 'functions';
+@import "locals";
+@import "functions";
 
 /// Generates a color value in HEX or RGBA based on `$color-palette` map.
 /// @group Colors
@@ -9,8 +9,8 @@
 /// @throw An error if a color name or varient aren't found.
 /// @example
 ///   body {
-///     background-color: palette('green');
-///     color: palette('black', 300);
+///     background-color: palette("green");
+///     color: palette("black", 300);
 ///   }
 @function palette($name: null, $variant: null) {
   $color: get-color($name);
@@ -26,7 +26,7 @@
 /// @output `color` param with HEX or RGBA value
 /// @example
 ///   body {
-///     @include color('black', 300);
+///     @include color("black", 300);
 ///   }
 @mixin color($name: null, $variant: null) {
   color: palette($name, $variant);
@@ -39,7 +39,7 @@
 /// @output `background-color` param with HEX or RGBA value
 /// @example
 ///   body {
-///     @include background-color('black', 300);
+///     @include background-color("black", 300);
 ///   }
 @mixin background-color($name: null, $variant: null) {
   background-color: palette($name, $variant);
