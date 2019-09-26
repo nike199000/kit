@@ -1,7 +1,6 @@
 const path = require('path');
 const sassTrue = require('sass-true');
 const glob = require('glob');
-const sass = require('sass');
 
 describe('SASS', () => {
   const sassFiles = glob.sync(
