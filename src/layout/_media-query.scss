@@ -42,7 +42,7 @@
 
   @if $query != "" {
     @media only screen and #{$query} {
-      @contentl;
+      @content;
     }
   }
   @else {

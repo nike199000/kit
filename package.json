@@ -18,19 +18,12 @@
     "url": "https://github.com/idangoldman/kit/issues"
   },
   "engines": {
-    "node": "10.16.0"
+    "node": "10.16.3"
   },
   "type": "module",
   "moduleRoots": [
     "src/"
   ],
-  "scripts": {
-    "build": "./node_modules/.bin/node-sass ./src/index.scss ./build/kit.css",
-    "test": "./node_modules/.bin/jest",
-    "test:watch": "./node_modules/.bin/jest --watchAll",
-    "doc": "./node_modules/.bin/sassdoc src/colors/ --dest=docs",
-    "doc:open": "open docs/index.html"
-  },
   "devDependencies": {
     "glob": "^7.1.4",
     "jest": "^24.9.0",
