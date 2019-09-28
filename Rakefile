@@ -11,10 +11,11 @@ task "build" => [
 
 task "sass" do
   COMMAND = "#{NPM_BIN}/node-sass"
+  FLAGS = "--output-style=compact --source-map=true"
   SOURCE  = "./src/index.scss"
   OUTPUT  = "./build/kit.css"
 
-  sh "#{COMMAND} #{SOURCE} #{OUTPUT}"
+  sh "#{COMMAND} #{FLAGS} #{SOURCE} #{OUTPUT}"
 end
 
 task "test" do
