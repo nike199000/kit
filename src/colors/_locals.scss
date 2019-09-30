@@ -1,10 +1,10 @@
 /// @group Colors
 /// @type Color
-$green-color:  #2da42c;
+$green-color: #2da42c;
 
 /// @group Colors
 /// @type Color
-$blue-color:   #3477ff;
+$blue-color: #3477ff;
 
 /// @group Colors
 /// @type Color
@@ -12,7 +12,7 @@ $purple-color: #802efb;
 
 /// @group Colors
 /// @type Color
-$red-color:    #ef3360;
+$red-color: #ef3360;
 
 /// @group Colors
 /// @type Color
@@ -20,11 +20,11 @@ $yellow-color: #ffc800;
 
 /// @group Colors
 /// @type Color
-$black-color:  #071417;
+$black-color: #071417;
 
 /// @group Colors
 /// @type Color
-$white-color:  #fff;
+$white-color: #fff;
 
 
 /// A map of alpha variants for colors.
@@ -40,7 +40,7 @@ $variants-color-alpha: (
 /// @group Colors
 /// @type Map
 $variants-bw-alpha: (
-  "50":  0.7,
+  "50":  0.07,
   "100": 0.14,
   "150": 0.21,
   "200": 0.28,

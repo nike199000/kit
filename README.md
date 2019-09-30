@@ -14,7 +14,7 @@ This is as basic as running:
 ```
 
 ### Prerequisite
-This repository using `node` version `10.16.0` and `ruby` version `2.6.4`.
+This repository using `node` version `10.16.3` and `ruby` version `2.6.4`.
 
 #### Node
 Don't have `node` or have a different version other than, then I would recommand installing [FNM](https://github.com/Schniz/fnm) or [NVM](https://github.com/nvm-sh/nvm) (Node package managers) with the right version of Node for this project.
