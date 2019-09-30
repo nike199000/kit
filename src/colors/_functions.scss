@@ -25,8 +25,8 @@
 /// @example
 ///   get-alpha-variant($variants-bw-alpha, 100); // 0.14
 @function get-alpha-variant($variants, $variant) {
-  @if map-has-key($variants, $variant) {
-    @return map-get($variants, $variant);
+  @if map-has-key($variants, quote(inspect($variant))) {
+    @return map-get($variants, quote(inspect($variant)));
   }
   @else {
     @error "Sorry '#{$variant}' variant doesn't exists.";
