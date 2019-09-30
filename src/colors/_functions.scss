@@ -7,8 +7,8 @@
 /// @example
 ///   get-color("green"); // #2da42c
 @function get-color($color: null) {
-  @if $color and map-has-key($color-palette, quote($color)) {
-    @return map-get($color-palette, quote($color));
+  @if $color and map-has-key($color-palette, $color) {
+    @return map-get($color-palette, $color);
   }
   @else {
     @error "Sorry '#{$color}' color doesn't exists.";
@@ -45,7 +45,7 @@
 @function get-alpha($color, $variant: null) {
   $alpha: 1;
 
-  @if $variant and str-index("black white", quote($color)) {
+  @if $variant and str-index("black white", $color) {
     $alpha: get-alpha-variant($variants-bw-alpha, $variant);
   }
   @else if $variant {

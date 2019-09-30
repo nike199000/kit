@@ -24,7 +24,10 @@
   }
 
   @include test("Return RGBA color of white with variant") {
-    @include assert-equal(palette("white", 100), rgba(#fff, 0.14));
+    @include assert-equal(
+      palette("white", 100),
+      rgba(#fff, 0.14)
+    );
   }
 
   @include test("Return color param with red HEX value") {
