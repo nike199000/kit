@@ -1,20 +1,28 @@
 const NODE_TYPES  = require('node-sass').types;
 const CACHED_URL  = new Set();
-const MEDIA_TYPES = /^(font|svg)\//;
+const MEDIA_TYPES = /^(fonts)\//;
+const FONT_SYSTEM = `
+  body {
+    font-family: "-apple-system", BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+`;
+
+const FONT_IMPORT = `
+  @import url('fontUrl?family=fontFamily&display=swap');
+`;
 
 function router(url, done) {
-  const type = url.split('/').shift();
+  const urlMatch = url.match(MEDIA_TYPES).input;
 
-  switch(type) {
-    case 'font':
-      const fontUrl    = 'https://fonts.googleapis.com/css';
-      const fontFamily = url.split('/').pop();
-      const fontFace   = `
-        @import url('${fontUrl}?family=${fontFamily}&display=swap');
-      `;
+  if (/^fonts\/system/.test(urlMatch)) {
+    done({ contents: FONT_SYSTEM });
+  }
+  else if (/^fonts\//.test(urlMatch)) {
+    const contents = FONT_IMPORT
+      .replace('fontUrl', 'https://fonts.googleapis.com/css')
+      .replace('fontFamily', url.split('/').pop());
 
-      done({ contents: fontFace });
-    break;
+    done({ contents });
   }
 }
 
