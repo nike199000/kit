@@ -5,6 +5,11 @@ namespace :clean do
     sh "yarn cache clean;"
   end
 
+  desc "Clean -> build"
+  task :build do
+    sh "rm -rf ./build"
+  end
+
   desc "Clean cache directories and files"
   task :temp do
     remove        = "rm -rf "

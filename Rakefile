@@ -15,13 +15,13 @@ desc "Builts the Kit: src -> build"
 task "build" => ["test", "sass", "doc"]
 
 desc "Compiles SCSS files src/index.scss -> build/kit.css"
-task "sass" do
-  command = "#{NPM_BIN}/node-sass "
-  flags   = "--output-style=compact --source-map=true "
-  source  = "./src/index.scss "
+task "sass" => ['clean:build'] do
+  command = "#{NPM_BIN}/node-sass"
+  flags   = "--output-style=compact --source-map=true --importer=./src/importer.js"
+  source  = "./src/index.scss"
   output  = "./build/kit.css"
 
-  sh command << flags << source << output
+  sh "#{command} #{flags} #{source} #{output}"
 end
 
 desc "Tests the code: jest"
