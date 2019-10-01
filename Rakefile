@@ -11,6 +11,21 @@ NPM_BIN = "#{NPM_DIR}/.bin"
 desc "Builts the Kit: #{config['version']} -> build"
 task :default => ["build"]
 
+desc "Version bumping"
+task "bump", [:version] => ["build"] do |t, args|
+  config['version'] = args[:version] if args[:version];
+
+  File.write(
+    "package.json",
+    JSON.pretty_generate(config)
+  )
+
+  sh %{
+    git commit -am "Version stamp #{config['version']}";
+    git branch --show-current | git push origin $1
+  }
+end
+
 desc "Builts the Kit: src -> build"
 task "build" => ["test", "sass", "doc"]
 
