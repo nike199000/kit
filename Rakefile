@@ -1,53 +1,45 @@
+require_relative "tasks/config"
+include Configuration
+config = Configuration.read()
+
+import "./tasks/add.rake"
+import "./tasks/clean.rake"
+
 NPM_DIR = "./node_modules"
 NPM_BIN = "#{NPM_DIR}/.bin"
 
+desc "Builts the Kit: #{config['version']} -> build"
 task :default => ["build"]
 
-task "build" => [
-  "test",
-  "sass",
-  "doc"
-]
+desc "Builts the Kit: src -> build"
+task "build" => ["test", "sass", "doc"]
 
+desc "Compiles SCSS files src/index.scss -> build/kit.css"
 task "sass" do
-  COMMAND = "#{NPM_BIN}/node-sass"
-  FLAGS = "--output-style=compact --source-map=true"
-  SOURCE  = "./src/index.scss"
-  OUTPUT  = "./build/kit.css"
+  command = "#{NPM_BIN}/node-sass "
+  flags   = "--output-style=compact --source-map=true "
+  source  = "./src/index.scss "
+  output  = "./build/kit.css"
 
-  sh "#{COMMAND} #{FLAGS} #{SOURCE} #{OUTPUT}"
+  sh command << flags << source << output
 end
 
+desc "Tests the code: jest"
 task "test" do
   sh "#{NPM_BIN}/jest"
 end
 
+desc "Watch and tests the code: jest"
 task "test:watch" do
   sh "#{NPM_BIN}/jest --watchAll"
 end
 
+desc "Generates SassDoc documentation: sassdoc -> docs"
 task "doc" do
   sh "#{NPM_BIN}/sassdoc src/colors/ --dest=docs"
 end
 
+desc "Open freshly generated documentation: sassdoc -> docs/index"
 task "doc:open" => ["doc"] do
   sh "open docs/index.html"
-end
-
-namespace :add do
-  task :init => ["clean"] do
-    sh "yarn install"
-  end
-
-  task :install, [:package] do |task, args|
-    sh "yarn add #{args[:package]}"
-  end
-
-  task :dev, [:package] do |task, args|
-    sh "yarn add #{args[:package]} --dev"
-  end
-
-  task :clean do
-    sh "rm -rf #{NPM_DIR}"
-  end
 end
