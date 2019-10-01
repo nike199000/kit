@@ -14,4 +14,9 @@ namespace :add do
   task :dev, [:package] do |task, args|
     sh "yarn add #{args[:package]} --dev"
   end
+
+  desc "Remove a dependency"
+  task :remove, [:package] do |task, args|
+    sh "yarn remove #{args[:package]}"
+  end
 end

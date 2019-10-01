@@ -11,17 +11,32 @@ NPM_BIN = "#{NPM_DIR}/.bin"
 desc "Builts the Kit: #{config['version']} -> build"
 task :default => ["build"]
 
+desc "Version bumping"
+task "bump", [:version] => ["build"] do |t, args|
+  config['version'] = args[:version] if args[:version];
+
+  File.write(
+    "package.json",
+    JSON.pretty_generate(config)
+  )
+
+  sh %{
+    git commit -am "Version stamp #{config['version']}";
+    git branch --show-current | git push origin $1
+  }
+end
+
 desc "Builts the Kit: src -> build"
 task "build" => ["test", "sass", "doc"]
 
 desc "Compiles SCSS files src/index.scss -> build/kit.css"
-task "sass" do
-  command = "#{NPM_BIN}/node-sass "
-  flags   = "--output-style=compact --source-map=true "
-  source  = "./src/index.scss "
+task "sass" => ['clean:build'] do
+  command = "#{NPM_BIN}/node-sass"
+  flags   = "--output-style=compact --source-map=true --importer=./src/importer.js"
+  source  = "./src/index.scss"
   output  = "./build/kit.css"
 
-  sh command << flags << source << output
+  sh "#{command} #{flags} #{source} #{output}"
 end
 
 desc "Tests the code: jest"
