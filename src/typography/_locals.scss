@@ -1,8 +1,8 @@
 // Fonts: size
-$base-font-size: 16px !default;
-$base-rem: $base-font-size !default;
+$font-size: 16px !default;
+$font-size-rem: $font-size !default;
 
 // Fonts: family
-$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 
-$header-font-family: $base-font-family !default;
+$header-font-family: $font-family !default;

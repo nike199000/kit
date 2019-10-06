@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  font-size: $base-rem;
+  font-size: $font-size-rem;
 }
 
 * {
@@ -32,7 +32,7 @@ body {
 
 body, button, input, select, textarea {
   color: palette("text");
-  font-family: $base-font-family;
+  font-family: $font-family;
   font-size: 1rem;
   font-weight: 400;
 }

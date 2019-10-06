@@ -27,7 +27,7 @@
 
 // Functions
 @function px2rem($value) {
-  @return ($value / $base-rem) + rem;
+  @return ($value / $font-size-rem) + rem;
 }
 
 // Mixins
