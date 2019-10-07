@@ -59,10 +59,15 @@ $brand-color:  $green-color;
 /// @type Color
 $action-color: $blue-color;
 
-/// Text color of the Kit.
+/// Primary color of the Kit.
 /// @group Colors
 /// @type Color
-$text-color: $black-color;
+$primary-color: $black-color;
+
+/// Secondary color of the Kit, A mix of black color with alpha.
+/// @group Colors
+/// @type Color
+$secondary-color: rgba($black-color, 0.42);
 
 /// Background color of the Kit.
 /// @group Colors
@@ -84,6 +89,7 @@ $color-palette: (
 
   "brand":      $brand-color,
   "action":     $action-color,
-  "text":       $text-color,
+  "primary":    $primary-color,
+  "secondary":  $secondary-color,
   "background": $background-color
 );

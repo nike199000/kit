@@ -1,7 +1,15 @@
-// Fonts: size
-$font-size: 16px !default;
-$font-size-rem: $font-size !default;
+// Font sizes
+$font-size-list: (
+  'h1': 44px,
+  'h2': 32px,
+  'h3': 24px,
+  'h4': 20px,
+  'h5': 16px,
+  'h6': 14px,
+  'h7': 12px
+);
 
-// Fonts: family
+$font-size-base: list.nth($font-size-list, 5) !default;
+
+// Font families
 $font-family: 'Roboto Mono', monospace !default;
-$header-font-family: $font-family !default;
