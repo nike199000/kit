@@ -16,6 +16,10 @@ html {
   }
 }
 
+ul, ol, dl {
+  margin-left: 20px;
+}
+
 body {
   // Antialiased experimental shit
   text-rendering: optimizeLegibility;
