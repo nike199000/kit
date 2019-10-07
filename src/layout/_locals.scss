@@ -1,28 +1,39 @@
 $column-count: 12;
+
 $word-columns: (
   one, two, three, four, five, six,
   seven, eight, nine, ten, eleven, twelve
+);
+
+$breakpoints: (
+  "xsmall": 320px,
+  "small":  568px,
+  "medium": 768px,
+  "large":  992px,
+  "xlarge": 1200px
+);
+
+$container-widths: (
+  "xsmall": 320px,
+  "small":  540px,
+  "medium": 720px,
+  "large":  960px,
+  "xlarge": 1140px
+);
+
+$space-dimensions: (
+  10px, 20px, 30px, 40px, 60px, 90px, 120px
+);
+
+$space-scope: (
+  'm': 'margin',
+  'p': 'padding'
 );
 
 $column-spacing:       30px;
 $row-spacing:          30px;
 $small-column-spacing: 20px;
 $small-row-spacing:    20px;
-
-$breakpoints: (
-  "xsmall": 320px,
-  "small": 568px,
-  "medium": 768px,
-  "large": 992px,
-  "xlarge": 1200px
-);
-
-$container-widths: (
-  "small": 540px,
-  "medium": 720px,
-  "large": 960px,
-  "xlarge": 1140px
-);
 
 $flex-directions: (
   row,
