@@ -16,6 +16,10 @@ html {
   }
 }
 
+::selection {
+  background-color: palette('brand', 100);
+}
+
 ul, ol, dl {
   margin-left: 20px;
 }
