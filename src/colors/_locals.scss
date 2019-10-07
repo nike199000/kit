@@ -67,7 +67,7 @@ $primary-color: $black-color;
 /// Secondary color of the Kit, A mix of black color with alpha.
 /// @group Colors
 /// @type Color
-$secondary-color: rgba($black-color, 0.42);
+$secondary-color: rgba($black-color, map-get($variants-bw-alpha, "300"));
 
 /// Background color of the Kit.
 /// @group Colors
