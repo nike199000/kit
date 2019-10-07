@@ -9,7 +9,7 @@ $font-size-list: (
   'h7': 12px
 );
 
-$font-size-base: list.nth($font-size-list, 5) !default;
+$font-size-base: nth($font-size-list, 5) !default;
 
 // Font families
 $font-family: 'Roboto Mono', monospace !default;
