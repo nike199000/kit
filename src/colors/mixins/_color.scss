@@ -1,0 +1,12 @@
+/// Color mixin wrapper for palette function.
+/// @group Colors
+/// @param {string} $name [null] The name of a color
+/// @param {number} $variant [null] The varient of a color
+/// @output `color` param with HEX or RGBA value
+/// @example
+///   body {
+///     @include color("black", 300);
+///   }
+@mixin color($name: null, $variant: null) {
+  color: palette($name, $variant);
+}

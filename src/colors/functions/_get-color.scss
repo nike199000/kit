@@ -1,0 +1,16 @@
+/// Gets a color HEX from `$color-palette` variable.
+/// @access private
+/// @group Colors
+/// @param {string} $color [null] Name of a color
+/// @return {color} Value in HEX format
+/// @throw Sorry '#{$color}' color doesn't exists.
+/// @example
+///   get-color("green"); // #2da42c
+@function get-color($color: null) {
+  @if $color and map-has-key($color-palette, $color) {
+    @return map-get($color-palette, $color);
+  }
+  @else {
+    @error "Sorry '#{$color}' color doesn't exists.";
+  }
+}
