@@ -1,0 +1,21 @@
+%link {
+  color: palette('action');
+
+  border-bottom: 2px solid palette('action');
+  text-decoration: none;
+
+  &:hover {
+    border-bottom: 0;
+  }
+}
+
+%link-secondary {
+  @extend %link;
+
+  color: palette('secondary');
+  border-bottom-color: palette('secondary');
+}
+
+
+// .link           { @extend %link; }
+// .link-secondary { @extend %link-secondary }

@@ -42,9 +42,5 @@ body, button, input, select, textarea {
 }
 
 a {
-  color: palette("action");
-
-  &:hover {
-    text-decoration: none;
-  }
+  @extend %link;
 }
