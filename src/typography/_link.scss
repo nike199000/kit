@@ -5,17 +5,56 @@
   text-decoration: none;
 
   &:hover {
-    border-bottom: 0;
+    border-bottom-color: shade('action', 15);
+    color: shade('action', 15);
+  }
+
+  &:active {
+    border-bottom-color: shade('action', 20);
+    color: shade('action', 20);
+  }
+
+  &[aria-disabled="true"] {
+    border-bottom-color: tint('action', 60);
+    color: tint('action', 60);
+    cursor: not-allowed;
+    position: relative;
+    // pointer-events: none;
+
+    &:after {
+      bottom: 0;
+      content: '';
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
   }
 }
 
 %link-secondary {
   @extend %link;
 
-  color: palette('secondary');
   border-bottom-color: palette('secondary');
-}
+  color: palette('secondary');
 
+  &:hover {
+    border-bottom-color: shade('secondary', 15);
+    color: shade('secondary', 15);
+  }
+
+  &:active {
+    border-bottom-color: shade('secondary', 20);
+    color: shade('secondary', 20);
+  }
+
+  &[aria-disabled="true"] {
+    border-bottom-color: tint('secondary', 60);
+    color: tint('secondary', 60);
+  }
+}
 
 // .link           { @extend %link; }
 // .link-secondary { @extend %link-secondary }
