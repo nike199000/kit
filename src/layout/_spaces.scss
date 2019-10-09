@@ -30,22 +30,20 @@
 
 @each $space in $space-dimensions {
   @each $char, $scope in $space-scope {
-    .#{$char}-#{index($space-dimensions, $space)}  {
-      #{$scope}: $space;
-    }
+    .#{$char}-#{index($space-dimensions, $space)}  { #{$scope}: $space; }
+    .#{$char}t-#{index($space-dimensions, $space)} { #{$scope}-top: $space; }
+    .#{$char}r-#{index($space-dimensions, $space)} { #{$scope}-right: $space; }
+    .#{$char}b-#{index($space-dimensions, $space)} { #{$scope}-bottom: $space; }
+    .#{$char}l-#{index($space-dimensions, $space)} { #{$scope}-left: $space; }
 
-    .#{$char}t-#{index($space-dimensions, $space)} {
-      #{$scope}-top: $space;
-    }
-
-    .#{$char}b-#{index($space-dimensions, $space)} {
-      #{$scope}-bottom: $space;
+    .#{$char}x-#{index($space-dimensions, $space)} {
+      #{$scope}-left: $space;
+      #{$scope}-right: $space;
     }
 
     .#{$char}y-#{index($space-dimensions, $space)} {
       #{$scope}-top: $space;
       #{$scope}-bottom: $space;
     }
-
   }
 }
