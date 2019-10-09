@@ -1,0 +1,3 @@
+@function shade($color, $alpha) {
+  @return mix(#000, $color, $alpha);
+}
