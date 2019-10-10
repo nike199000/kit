@@ -1,0 +1,16 @@
+@import "locals";
+@import "mixins/size";
+@import "mixins/varient";
+
+@mixin button($varient: 'primary', $size: 'medium', $color: 'action') {
+  @extend %px-2;
+
+  @include button-varient($varient, $color);
+  @include button-size($size);
+
+  border-radius: $border-radius;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}

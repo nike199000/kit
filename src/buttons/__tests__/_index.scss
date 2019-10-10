@@ -1,0 +1,77 @@
+@import "true";
+@import "../../colors/_index";
+@import "../../typography/_index";
+@import "../../layout/_index";
+@import "../_index";
+
+@include describe("Test buttons functionality") {
+  @include test("Return primary medium button") {
+    @include assert {
+      @include output {
+        @include button;
+      }
+
+      @include expect {
+        // padding-right: 20px;
+        // padding-left: 20px;
+
+        color: #fff;
+        background-color: #3477ff;
+        border: 2px solid #3477ff;
+
+        &:hover {
+          background-color: #2c65d9;
+          border: 2px solid #2c65d9;
+        }
+
+        &:active, &.current {
+          background-color: #2a5fcc;
+          border: 2px solid #2a5fcc;
+          box-shadow: inset 0 0 4px #2f6be6;
+        }
+
+        &:focus {
+          border-color: #2453b3;
+        }
+
+        font: 700 14px "Roboto Mono", monospace;
+        height: 44px;
+        line-height: 42px;
+
+        border-radius: 2px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
+
+  @include test("Check button size: large") {
+    @include assert {
+      @include output {
+        @include button($size: 'large');
+      }
+
+      @include contains {
+        font: 700 20px "Roboto Mono", monospace;
+        height: 54px;
+        line-height: 52px;
+      }
+    }
+  }
+
+  @include test("Check button size: small") {
+    @include assert {
+      @include output {
+        @include button($size: 'small');
+      }
+
+      @include contains {
+        font: 700 12px "Roboto Mono", monospace;
+        height: 32px;
+        line-height: 30px;
+      }
+    }
+  }
+}
