@@ -1,7 +1,7 @@
 @import "true";
 @import "../_index";
 
-@include describe("Test color functionality") {
+@include describe("Test colors functionality") {
   @include test("Return HEX color of green") {
     @include assert-equal(
       palette("green"),
