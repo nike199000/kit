@@ -74,4 +74,85 @@
       }
     }
   }
+
+  @include test("Return secondary small button") {
+    @include assert {
+      @include output {
+        @include button(
+          $varient: 'secondary',
+          $size: 'small'
+        );
+      }
+
+      @include expect {
+        color: #071417;
+        background-color: rgba(7, 20, 23, 0.14);
+        border: 2px solid rgba(7, 20, 23, 0.14);
+
+        &:hover {
+          background-color: rgba(2, 6, 7, 0.269);
+          border: 2px solid rgba(2, 6, 7, 0.269);
+        }
+
+        &:active, &.current {
+          background-color: rgba(2, 5, 5, 0.312);
+          border: 2px solid rgba(2, 5, 5, 0.312);
+          box-shadow: inset 0 0 4px rgba(3, 8, 9, 0.226);
+        }
+
+        &:focus {
+          border-color: rgba(1, 3, 3, 0.398);
+        }
+
+        font: 700 12px "Roboto Mono", monospace;
+        height: 32px;
+        line-height: 30px;
+
+        border-radius: 2px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
+
+  @include test("Return tertiary large button") {
+    @include assert {
+      @include output {
+        @include button('tertiary', 'large');
+      }
+
+      @include expect {
+        color: #071417;
+        background-color: #fff;
+        border: 2px solid #fff;
+
+        &:hover {
+          background-color: #d9d9d9;
+          border: 2px solid #d9d9d9;
+        }
+
+        &:active, &.current {
+          background-color: #cccccc;
+          border: 2px solid #cccccc;
+          box-shadow: inset 0 0 4px #e6e6e6;
+        }
+
+        &:focus {
+          border-color: #b3b3b3;
+        }
+
+        font: 700 20px "Roboto Mono", monospace;
+        height: 54px;
+        line-height: 52px;
+
+        border-radius: 2px;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
 }

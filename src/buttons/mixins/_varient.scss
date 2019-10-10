@@ -4,6 +4,7 @@
   }
 
   @if $varient == 'primary' {
+    $color: palette($color);
     color: palette('white');
   }
   @else {
@@ -17,8 +18,8 @@
     $color: palette('white');
   }
 
-  background-color: palette($color);
-  border: 2px solid palette($color);
+  background-color: $color;
+  border: 2px solid $color;
 
   &:hover {
     background-color: shade($color, 15);

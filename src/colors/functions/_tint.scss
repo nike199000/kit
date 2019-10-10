@@ -1,3 +1,7 @@
 @function tint($color, $alpha) {
-  @return mix(#fff, palette($color), $alpha);
+  @if type-of($color) != color {
+    $color: palette($color);
+  }
+
+  @return mix(#fff, $color, $alpha);
 }

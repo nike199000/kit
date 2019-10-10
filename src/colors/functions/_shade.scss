@@ -1,3 +1,7 @@
 @function shade($color, $alpha) {
-  @return mix(#000, palette($color), $alpha);
+  @if type-of($color) != color {
+    $color: palette($color);
+  }
+
+  @return mix(#000, $color, $alpha);
 }
