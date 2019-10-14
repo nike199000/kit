@@ -1,4 +1,4 @@
-@function tint($color, $alpha) {
+@function tint($color, $alpha: 100%) {
   @if type-of($color) != color {
     $color: palette($color);
   }

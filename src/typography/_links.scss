@@ -5,18 +5,18 @@
   text-decoration: none;
 
   &:hover {
-    border-bottom-color: shade('action', 15);
-    color: shade('action', 15);
+    border-bottom-color: shade('action', 15%);
+    color: shade('action', 15%);
   }
 
   &:active {
-    border-bottom-color: shade('action', 20);
-    color: shade('action', 20);
+    border-bottom-color: shade('action', 20%);
+    color: shade('action', 20%);
   }
 
   &[aria-disabled="true"] {
-    border-bottom-color: tint('action', 60);
-    color: tint('action', 60);
+    border-bottom-color: tint('action', 60%);
+    color: tint('action', 60%);
     cursor: not-allowed;
     position: relative;
     // pointer-events: none;
@@ -41,18 +41,18 @@
   color: palette('secondary');
 
   &:hover {
-    border-bottom-color: shade('secondary', 15);
-    color: shade('secondary', 15);
+    border-bottom-color: shade('secondary', 15%);
+    color: shade('secondary', 15%);
   }
 
   &:active {
-    border-bottom-color: shade('secondary', 20);
-    color: shade('secondary', 20);
+    border-bottom-color: shade('secondary', 20%);
+    color: shade('secondary', 20%);
   }
 
   &[aria-disabled="true"] {
-    border-bottom-color: tint('secondary', 60);
-    color: tint('secondary', 60);
+    border-bottom-color: tint('secondary', 60%);
+    color: tint('secondary', 60%);
   }
 }
 

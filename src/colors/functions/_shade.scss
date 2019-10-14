@@ -1,4 +1,4 @@
-@function shade($color, $alpha) {
+@function shade($color, $alpha: 100%) {
   @if type-of($color) != color {
     $color: palette($color);
   }
