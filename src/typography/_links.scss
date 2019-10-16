@@ -1,7 +1,8 @@
 %link {
-  color: palette('action');
-
   border-bottom: 2px solid palette('action');
+  color: palette('action');
+  cursor: pointer;
+  display: inline-block;
   text-decoration: none;
 
   &:hover {
