@@ -1,0 +1,10 @@
+@mixin textarea($size: "medium", $resize: true) {
+  @include input($size);
+
+  @if $resize == false {
+    resize: none
+  }
+
+  height: 250px;
+  min-height: 250px;
+}
