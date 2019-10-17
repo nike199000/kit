@@ -1,5 +1,5 @@
 // @media not|only mediatype and (media feature and|or|not media feature)
-@mixin media-query($size, $scale: "only") {;
+@mixin media-query($size: "medium", $scale: "only") {;
   $query: "";
 
   @if index(("minimum", "min"), $scale) {
@@ -48,4 +48,8 @@
   @else {
     @content
   }
+}
+
+@mixin mq($size: "medium", $scale: "only") {
+  @include media-query($size: "medium", $scale: "only");
 }
