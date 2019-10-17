@@ -86,7 +86,7 @@
     @include assert {
       @include output {
         @include button(
-          $varient: 'secondary',
+          $variant: 'secondary',
           $size: 'small'
         );
       }

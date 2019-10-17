@@ -1,9 +1,9 @@
-@mixin button-varient($varient: null, $color: null) {
-  @if not index($button-varients, $varient) {
-    @error "Sorry button '#{$varient}' varient doesn't exists.";
+@mixin button-variant($variant: null, $color: null) {
+  @if not index($button-variants, $variant) {
+    @error "Sorry button '#{$variant}' variant doesn't exists.";
   }
 
-  @if $varient == 'primary' {
+  @if $variant == 'primary' {
     $color: palette($color);
     color: palette('white');
   }
@@ -11,10 +11,10 @@
     color: palette('black');
   }
 
-  @if $varient == 'secondary' {
+  @if $variant == 'secondary' {
     $color: mix(palette('black'), #fff, 14%);
   }
-  @else if $varient == 'tertiary' {
+  @else if $variant == 'tertiary' {
     $color: palette('white');
   }
 

@@ -1,12 +1,12 @@
 @import "locals";
 @import "mixins/size";
-@import "mixins/varient";
+@import "mixins/variant";
 
-@mixin button($varient: 'primary', $size: 'medium', $color: 'action') {
+@mixin button($variant: 'primary', $size: 'medium', $color: 'action') {
   @extend %px-2;
 
   @include no-select;
-  @include button-varient($varient, $color);
+  @include button-variant($variant, $color);
   @include button-size($size);
 
   border-radius: $border-radius;
