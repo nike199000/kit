@@ -12,5 +12,5 @@
     $weight: 700;
   }
 
-  @return $weight $size $font-family;
+  @return $weight rem($size) $font-family;
 }
