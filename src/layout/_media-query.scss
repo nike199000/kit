@@ -49,9 +49,3 @@
     @content;
   }
 }
-
-@mixin mq($size: "medium", $scale: "only") {
-  @include media-query($size: "medium", $scale: "only") {
-    @content;
-  }
-}
