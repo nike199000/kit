@@ -5,9 +5,9 @@
 @mixin button($variant: 'primary', $size: 'medium', $color: 'action') {
   @extend %px-2;
 
-  @include no-select;
   @include button-variant($variant, $color);
   @include button-size($size);
+  @include no-select;
 
   border-radius: $border-radius;
   cursor: pointer;
