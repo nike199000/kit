@@ -1,17 +1,38 @@
-/// Generates a color value in HEX or RGBA based on `$color-palette` map.
+/// Generates a color value in HEX or RGBA based on `$color-palette` map and variant maps.
 /// @group Colors
-/// @param {string} $name [null] The name of a color
-/// @param {number} $variant [null] The varient of a color
-/// @return {color} Value in HEX or RGBA format.
-/// @throw An error if a color name or varient aren't found.
+/// @param  {string}  $name    [null]
+/// The name of a color
+/// @param  {number}  $variant [null]
+/// The variant of a color
+/// @param  {boolean} $opacity [false]
+/// Should the color be returned with transparancy match the variant
+/// @return {color}
+/// Color value in HEX or RGBA format.
+///
+/// @throw  An error if a color name or variant aren't found.
 /// @example
 ///   body {
-///     background-color: palette("green");
-///     color: palette("black", 300);
+///     background-color: palette("green");         // #2da42c
+///     color: palette("black", 300);               // #979c9e
+///     border-color: palette('purple', 100, true); // rgba(128, 46, 251, 0.14)
 ///   }
-@function palette($name: null, $variant: null) {
+@function palette($name: null, $variant: null, $opacity: false) {
   $color: get-color($name);
   $alpha: get-alpha($name, $variant);
 
-  @return if($alpha == 1, $color, rgba($color, $alpha));
+  @if $alpha == 100% {
+    @return $color;
+  }
+  @else if $opacity == true {
+    @return rgba($color, $alpha / 100);
+  }
+  @else {
+    $blend-color: #fff;
+
+    @if $name == 'white' {
+      $blend-color: #000;
+    }
+
+    @return mix($color, $blend-color, $alpha);
+  }
 }

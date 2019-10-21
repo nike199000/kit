@@ -5,12 +5,12 @@
 /// @param {number} $variant A number between 100-300 multiples by 100 for colors, and a number between 50-300 multiples by 50 for black and white colors.
 /// @return {number} A number between 0 to 1.
 /// @example
-///   get-alpha("black", 50) // 0.07
-///   get-alpha("green") // 1
+///   get-alpha('black', 50) // 0.07
+///   get-alpha('green') // 1
 @function get-alpha($color, $variant: null) {
-  $alpha: 1;
+  $alpha: 100%;
 
-  @if $variant and str-index("black white", $color) {
+  @if $variant and str-index('black white', $color) {
     $alpha: get-alpha-variant($variants-bw-alpha, $variant);
   }
   @else if $variant {

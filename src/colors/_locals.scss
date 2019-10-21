@@ -31,21 +31,21 @@ $white-color: #fff;
 /// @group Colors
 /// @type Map
 $variants-color-alpha: (
-  "100": 0.14,
-  "200": 0.28,
-  "300": 0.42
+  "100": 14,
+  "200": 28,
+  "300": 42
 );
 
 /// A map of alpha variants for black and white colors.
 /// @group Colors
 /// @type Map
 $variants-bw-alpha: (
-  "50":  0.07,
-  "100": 0.14,
-  "150": 0.21,
-  "200": 0.28,
-  "250": 0.35,
-  "300": 0.42
+  "50":  7,
+  "100": 14,
+  "150": 21,
+  "200": 28,
+  "250": 35,
+  "300": 42
 );
 
 
@@ -67,12 +67,12 @@ $primary-color: $black-color;
 /// Secondary color of the Kit, A mix of black color with alpha.
 /// @group Colors
 /// @type Color
-$secondary-color: rgba($black-color, map-get($variants-bw-alpha, "300"));
+$secondary-color: mix($black-color, #fff, map-get($variants-bw-alpha, "300"));
 
 /// Background color of the Kit.
 /// @group Colors
 /// @type Color
-$background-color: rgba($black-color, map-get($variants-bw-alpha, "50"));
+$background-color: rgba($black-color, map-get($variants-bw-alpha, "50") / 100);
 
 
 /// A map of all the colors in the Kit.
