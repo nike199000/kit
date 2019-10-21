@@ -1,14 +1,14 @@
-@mixin button-variant($variant: null, $color: null) {
+@mixin button-variant($variant: null, $color: null, $text-color: null) {
   @if not index($button-variants, $variant) {
     @error "Sorry button '#{$variant}' variant doesn't exists.";
   }
 
-  @if $variant == 'primary' {
-    $color: palette($color);
-    color: palette('white');
+  @if $variant == 'action' {
+    $color: palette('action');
+    $text-color: palette('white');
   }
   @else {
-    color: palette('black');
+    $text-color: palette('black');
   }
 
   @if $variant == 'secondary' {
@@ -20,6 +20,7 @@
 
   background-color: $color;
   border: 2px solid $color;
+  color: $text-color;
 
   &:hover {
     background-color: shade($color, 15%);
@@ -40,6 +41,7 @@
     background-color: tint($color, 60%);
     border-color: tint($color, 60%);
     box-shadow: none;
+    color: tint($text-color, 60%);
     cursor: not-allowed;
   }
 }

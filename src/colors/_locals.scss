@@ -72,7 +72,7 @@ $secondary-color: mix($black-color, #fff, map-get($variants-bw-alpha, "300"));
 /// Background color of the Kit.
 /// @group Colors
 /// @type Color
-$background-color: rgba($black-color, map-get($variants-bw-alpha, "50") / 100);
+$background-color: mix($black-color, #fff, map-get($variants-bw-alpha, "50"));
 
 
 /// A map of all the colors in the Kit.
