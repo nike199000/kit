@@ -1,9 +1,12 @@
 %link {
   border-bottom: 2px solid palette('action');
   color: palette('action');
-  cursor: pointer;
   display: inline-block;
   text-decoration: none;
+
+  &, & * {
+    cursor: pointer !important;
+  }
 
   &:hover {
     border-bottom-color: shade('action', 15%);
