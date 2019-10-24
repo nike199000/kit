@@ -1,7 +1,7 @@
 @mixin rtl($property, $ltr-value, $rtl-value) {
   #{$property}: $ltr-value;
 
-  [dir=rtl] & {
+  [dir="rtl"] & {
     #{$property}: $rtl-value;
   }
 }
