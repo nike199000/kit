@@ -1,0 +1,47 @@
+@mixin input($size: 'medium') {
+  @extend %px-1;
+  @include input-size($size);
+
+  appearance: none; // hides the dropdown defualt arrow
+  background-color: palette('white');
+  border-radius: $border-radius;
+  border: solid 1px palette('black', 300);
+  color: palette('black');
+  max-width: 100%;
+  min-width: 255px;
+
+  &::placeholder {
+    color: palette('black', 300);
+  }
+
+  &:focus { border-color: palette('action'); }
+  &:not(:focus):not(:placeholder-shown) {
+    &:invalid { border-color: palette('red');   }
+    &:valid   { border-color: palette('green'); }
+  }
+
+  &[readonly], &[disabled] {
+    background-color: palette('black', 50);
+
+    &, &:focus {
+      border-color: palette('black', 300);
+    }
+  }
+
+  &[readonly] {
+    cursor: default;
+
+    &, &::placeholder {
+      color: palette('black');
+    }
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    &, &::placeholder {
+      color: palette('black', 300);
+    }
+  }
+  // &:required  {}
+}

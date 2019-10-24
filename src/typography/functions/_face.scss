@@ -1,0 +1,16 @@
+@function face($size: 'h5', $bold: null) {
+  @if $size and map-has-key($font-size-list, $size) {
+    $size: map-get($font-size-list, $size);
+  }
+  @else {
+    @error "Sorry '#{size}' size doesn't exists.";
+  }
+
+  $weight: 400;
+
+  @if $bold {
+    $weight: 700;
+  }
+
+  @return $weight rem($size) $font-family;
+}

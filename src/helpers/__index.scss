@@ -24,12 +24,6 @@
   border-radius: 50%;
 }
 
-
-// Functions
-@function px2rem($value) {
-  @return ($value / $base-rem) + rem;
-}
-
 // Mixins
 @mixin no-select {
   user-select: none;

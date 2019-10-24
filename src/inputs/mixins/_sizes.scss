@@ -1,0 +1,13 @@
+@mixin input-size($size: null) {
+  @if not map-has-key($input-sizes, $size) {
+    @error "Sorry input '#{$size}' size doesn't exists.";
+  }
+
+  $input-size: map-get($input-sizes, $size);
+  $face: map-get($input-size, 'face');
+  $height: map-get($input-size, 'height');
+
+  font: face($face);
+  height: $height;
+  line-height: $height - 2px;
+}

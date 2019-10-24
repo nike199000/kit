@@ -1,15 +1,15 @@
 // @media not|only mediatype and (media feature and|or|not media feature)
-@mixin media-query($size, $scale: "only") {;
+@mixin media-query($size: "medium", $scale: "only") {;
   $query: "";
 
-  @if index(("minimum", "min"), $scale) {
+  @if index(("minimum", "min", "up"), $scale) {
     $minimum-size: map-get($breakpoints, $size);
 
     @if $minimum-size != 0px {
       $query: "(min-width: #{$minimum-size})";
     }
   }
-  @else if index(("maximum", "max"), $scale) {
+  @else if index(("maximum", "max", "down"), $scale) {
     $maximum-size: map-get($breakpoints, $size) - 1px;
 
     @if $maximum-size != -1px {
@@ -46,6 +46,6 @@
     }
   }
   @else {
-    @content
+    @content;
   }
 }

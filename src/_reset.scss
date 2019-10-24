@@ -1,10 +1,19 @@
 html {
   box-sizing: border-box;
-  font-size: $base-rem;
+  font-size: $font-size-base;
+
+  @include media-query("medium", "down") {
+    font-size: $font-size-base - 1px;
+  }
+
+  @include media-query("small", "down") {
+    font-size: $font-size-base - 2px;
+  }
 }
 
 * {
   border: 0;
+  cursor: default;
   margin: 0;
   outline: 0;
   padding: 0;
@@ -16,8 +25,20 @@ html {
   }
 }
 
+::selection {
+  background: palette('brand', 100);
+}
+
 ul, ol, dl {
-  list-style-type: none;
+  margin-left: 25px;
+
+  li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  ul, ol, dl {
+    margin-top: 10px;
+  }
 }
 
 body {
@@ -31,16 +52,19 @@ body {
 }
 
 body, button, input, select, textarea {
-  color: palette("text");
-  font-family: $base-font-family;
-  font-size: 1rem;
-  font-weight: 400;
+  color: palette("primary");
+  font: face('h5');
+}
+
+button, input, select, textarea {
+  cursor: pointer;
 }
 
 a {
-  color: palette("action");
+  @extend %link;
+}
 
-  &:hover {
-    text-decoration: none;
-  }
+img {
+  font-size: 0;
+  line-height: 0;
 }

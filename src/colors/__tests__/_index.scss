@@ -1,39 +1,46 @@
-@import "true";
-@import "../_index";
+@import 'true';
+@import '../_index';
 
-@include describe("Test color functionality") {
-  @include test("Return HEX color of green") {
+@include describe('Test colors functionality') {
+  @include test('Return HEX color of green') {
     @include assert-equal(
-      palette("green"),
+      palette('green'),
       #2da42c
     );
   }
 
-  @include test("Return HEX color of action") {
+  @include test('Return HEX color of action') {
     @include assert-equal(
-      palette("action"),
+      palette('action'),
       #3477ff
     );
   }
 
-  @include test("Return RGBA color of yellow with variant") {
+  @include test('Return HEX color of yellow with variant') {
     @include assert-equal(
-      palette("yellow", 100),
-      rgba(#ffc800, 0.14)
+      palette('yellow', 100),
+      #fff7db
     );
   }
 
-  @include test("Return RGBA color of white with variant") {
+  @include test('Return HEX color of white with variant') {
     @include assert-equal(
-      palette("white", 100),
-      rgba(#fff, 0.14)
+      palette('white', 100),
+      #242424
     );
   }
 
-  @include test("Return color param with red HEX value") {
+  @include test('Return RGBA color of purple with variant') {
+    @include assert-equal(
+      palette('purple', 200, true),
+      rgba(128, 46, 251, 0.28)
+    );
+  }
+
+  @include test('Return color param with red HEX value') {
     @include assert {
       @include output {
-        @include color("red");
+        @include color('red');
       }
 
       @include expect {
@@ -42,22 +49,22 @@
     }
   }
 
-  @include test("Return color param with red RGBA value with variant") {
+  @include test('Return color param with red RGBA value with variant') {
     @include assert {
       @include output {
-        @include color("red", 300);
+        @include color('red', 300);
       }
 
       @include expect {
-        color: rgba(#ef3360, 0.42);
+        color: #f8a9bc;
       }
     }
   }
 
-  @include test("Return background color param with red HEX value") {
+  @include test('Return background color param with red HEX value') {
     @include assert {
       @include output {
-        @include background-color("red");
+        @include background-color('red');
       }
 
       @include expect {

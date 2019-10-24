@@ -1,0 +1,13 @@
+@mixin button-size($size: null) {
+  @if not map-has-key($button-sizes, $size) {
+    @error "Sorry button '#{$size}' size doesn't exists.";
+  }
+
+  $button-size: map-get($button-sizes, $size);
+  $face: map-get($button-size, 'face');
+  $height: map-get($button-size, 'height');
+
+  font: face($face, 'bold');
+  height: $height;
+  line-height: $height - 2px;
+}
