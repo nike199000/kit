@@ -1,4 +1,3 @@
-const NODE_TYPES  = require('node-sass').types;
 const CACHED_URL  = new Set();
 const MEDIA_TYPES = /^(fonts)\//;
 const FONT_SYSTEM = `

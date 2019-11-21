@@ -1,5 +1,5 @@
 {
-  "name": "kit",
+  "name": "@idangoldman/kit",
   "title": "Kit",
   "description": "Opinionated Ui-Kit with a dream to become a Design System one day.",
   "author": "Idan Goldman",
@@ -7,9 +7,11 @@
     "David Rappaport"
   ],
   "license": "MIT",
-  "version": "0.1.1",
-  "main": "./src/index.sass",
-  "homepage": "https://github.com/idangoldman/kit",
+  "version": "0.1.2",
+  "main": "./src/index.scss",
+  "style": "./dist/css/kit.css",
+  "sass": "./src/index.scss",
+  "homepage": "https://idangoldman.github.io/kit/",
   "repository": {
     "type": "git",
     "url": "https://github.com/idangoldman/kit.git"
@@ -17,17 +19,34 @@
   "bugs": {
     "url": "https://github.com/idangoldman/kit/issues"
   },
-  "engines": {
-    "node": "10.16.3"
-  },
-  "type": "module",
-  "moduleRoots": [
-    "src/"
+  "keywords": [
+    "css",
+    "design system",
+    "flexbox",
+    "framework",
+    "front-end",
+    "frontend",
+    "grid",
+    "mobile web",
+    "responsive",
+    "sass",
+    "scss",
+    "stylus",
+    "ui kit",
+    "web"
   ],
+  "engines": {
+    "node": " 13.1.0"
+  },
+  "dependencies": {
+    "node-sass": "^4.13.0"
+  },
+  "peerDependencies": {
+    "node-sass": "^4.13.0"
+  },
   "devDependencies": {
-    "glob": "^7.1.4",
+    "glob": "^7.1.6",
     "jest": "^24.9.0",
-    "node-sass": "^4.12.0",
     "sass-true": "^5.0.0",
     "sassdoc": "^2.7.1"
   }

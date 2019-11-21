@@ -1,3 +1,11 @@
 build/
-page/
+docs/
+node_modules/
+vendor/
+
 .editorconfig
+*.lock
+*.log
+Gemfile
+Rakefile
+sass.test.js
